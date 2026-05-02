@@ -1,0 +1,65 @@
+# WordPress.org plugins source configuration
+# This is a pilot source for Phase 1 that ingests plugin ecosystem data from WordPress.org
+
+name: "wordpress.org plugins"
+source_family: "wordpressorg"
+
+connector:
+  plugin_name: "wordpressorg"
+  plugin_version: "1.0.0"
+  capabilities:
+    - "discover_capabilities"
+    - "fetch_full"
+    - "fetch_incremental"
+    - "emit_raw_envelope"
+    - "map_to_canonical"
+    - "report_health"
+
+endpoints:
+  # WordPress.org plugins (as projects)
+  - url: "https://api.wordpress.org/plugins/info/1.0/"
+    entity_type: "project"
+    method: "POST"
+    pagination:
+      strategy: "page"
+      page_size: 100
+    rate_limit:
+      requests_per_second: 2
+      burst_size: 10
+
+  # WordPress.org plugin authors (as actors)
+  - url: "https://api.wordpress.org/plugins/info/1.0/authors"
+    entity_type: "actor"
+    method: "GET"
+    pagination:
+      strategy: "none"
+    rate_limit:
+      requests_per_second: 2
+      burst_size: 5
+
+authentication:
+  type: "none"
+
+refresh_policy:
+  interval: "0 0 * * 0"  # Weekly, Sundays at midnight
+  strategy: "full"  # WordPress.org API doesn't support incremental well
+  timeout_seconds: 7200
+
+quality_policy: "quality-policy.yaml"
+mapping_pack: "wordpressorg/default.mapping.yaml"
+
+locales:
+  - "en"
+
+primary_locale: "en"
+
+metadata:
+  ecosystem: "WordPress"
+  maintainer: "WordPress Community"
+  contact: "plugins@wordpress.org"
+  tags:
+    - "wordpress"
+    - "plugins"
+    - "ecosystem"
+
+enabled: false  # Start disabled; enable after testing

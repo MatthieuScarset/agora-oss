@@ -1,0 +1,36 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Build artifacts
+site/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Project specific
+.env
+.env.local
+*.log

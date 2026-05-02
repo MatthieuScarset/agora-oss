@@ -1,0 +1,36 @@
+[
+    {
+        "slug": "alice-dev",
+        "display_name": "Alice Developer",
+        "avatar_url": "https://secure.gravatar.com/avatar/abc123",
+        "roles": [
+            "plugin_author"
+        ],
+        "plugin_slugs": [
+            "advanced-custom-fields",
+            "acf-pro"
+        ]
+    },
+    {
+        "slug": "bob-plugin",
+        "display_name": "Bob Plugin Author",
+        "avatar_url": "https://secure.gravatar.com/avatar/def456",
+        "roles": [
+            "plugin_author"
+        ],
+        "plugin_slugs": [
+            "elementor"
+        ]
+    },
+    {
+        "slug": "carol-dev",
+        "display_name": "Carol Developer",
+        "avatar_url": "https://secure.gravatar.com/avatar/ghi789",
+        "roles": [
+            "contributor"
+        ],
+        "plugin_slugs": [
+            "jetpack"
+        ]
+    }
+]

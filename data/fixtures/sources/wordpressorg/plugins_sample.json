@@ -1,0 +1,32 @@
+[
+    {
+        "slug": "advanced-custom-fields",
+        "name": "Advanced Custom Fields",
+        "description": "Customize WordPress edit screens with powerful, professional fields.",
+        "status": "active",
+        "added": "2010-04-20",
+        "last_updated": "2025-11-20",
+        "author_slug": "alice-dev",
+        "requires_plugins": []
+    },
+    {
+        "slug": "elementor",
+        "name": "Elementor – Website Builder",
+        "description": "The platform to create WordPress sites without any code.",
+        "status": "active",
+        "added": "2015-06-01",
+        "last_updated": "2025-11-15",
+        "author_slug": "bob-plugin",
+        "requires_plugins": []
+    },
+    {
+        "slug": "jetpack",
+        "name": "Jetpack",
+        "description": "Everything you need to grow your business on WordPress.com.",
+        "status": "active",
+        "added": "2010-01-15",
+        "last_updated": "2025-11-10",
+        "author_slug": "carol-dev",
+        "requires_plugins": []
+    }
+]

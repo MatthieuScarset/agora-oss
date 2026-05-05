@@ -1,0 +1,203 @@
+{
+    "self": "https://www.drupal.org/api-d7/node?type=project_module&limit=1",
+    "first": "https://www.drupal.org/api-d7/node?type=project_module&limit=1&page=0",
+    "last": "https://www.drupal.org/api-d7/node?type=project_module&limit=1&page=55500",
+    "next": "https://www.drupal.org/api-d7/node?type=project_module&limit=1&page=1",
+    "list": [
+        {
+            "body": {
+                "value": "\u003Cp\u003EThis project is an implementation of the \u003Cstrong\u003E\u003Ca href=\"https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html\" rel=\"nofollow\"\u003EAmazon Product Advertising API\u003C/a\u003E\u003C/strong\u003E. \u003C/p\u003E\n\u003Cp\u003EIt's modular in design, with a central \"\u003Cstrong\u003EPure API\u003C/strong\u003E\" component that interacts with Amazon, and optional modules to handle expanded data for additional product types, features like wish-lists and customer reviews, etc.\u003C/p\u003E\n\u003Ch2\u003EMajor Update - 2/9/17\u003C/h2\u003E\n\u003Cp\u003EThe Amazon Product Advertisement API module requires serious attention and has been severally ignored the last 3-4 years.\u003C/p\u003E\n\u003Cp\u003EThe \u003Cstrong\u003EDrupal 7\u003C/strong\u003E version requires updates, but for the most part is relatively stable.\u003C/p\u003E\n\u003Cp\u003EThe \u003Cstrong\u003EDrupal 8\u003C/strong\u003E version is a joke (my fault - kamescg) and really should have never been released, because it was really just a rudimentary port from the Drupal 7 version.\u003C/p\u003E\n\u003Cp\u003EEnough requests have been made that I think it's merits some developer love to re-launch this module, so it can serve the Drupal community and the many people who I assume are earning an income using the Amazon Product Advertisement API Module. \u003C/p\u003E\n\u003Cp\u003EI'm thinking about starting a public fund, so we can ensure the module will continue to have support, so if anybody is interested in either funding the project or becoming a sponsored developer, please contact me directly (kamescg) or open an issue ticket, so everyone can get involved.\u003C/p\u003E",
+                "summary": "\u003Cp\u003EThis project is an implementation of the Amazon Product Advertising API. \u003C/p\u003E\n\u003Cp\u003EIt's modular in design, with a central \"Pure API\" component that interacts with Amazon, and optional modules to handle expanded data for additional product types, features like wish-lists and customer reviews, etc.\u003C/p\u003E\n\u003Cp\u003EThe Amazon API Module and Amazon Store will now be actively maintained, updated and enhanced. \u003C/p\u003E",
+                "format": "1"
+            },
+            "upload": [],
+            "taxonomy_vocabulary_44": {
+                "uri": "https://www.drupal.org/api-d7/taxonomy_term/13028",
+                "id": "13028",
+                "resource": "taxonomy_term"
+            },
+            "taxonomy_vocabulary_46": {
+                "uri": "https://www.drupal.org/api-d7/taxonomy_term/9988",
+                "id": "9988",
+                "resource": "taxonomy_term"
+            },
+            "taxonomy_vocabulary_3": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/taxonomy_term/104",
+                    "id": "104",
+                    "resource": "taxonomy_term"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/taxonomy_term/67",
+                    "id": "67",
+                    "resource": "taxonomy_term"
+                }
+            ],
+            "field_project_type": "full",
+            "field_project_machine_name": "amazon",
+            "field_project_has_issue_queue": true,
+            "field_project_components": [
+                "Code",
+                "Documentation",
+                "Miscellaneous",
+                "User interface"
+            ],
+            "field_project_default_component": null,
+            "field_project_issue_guidelines": [],
+            "field_project_has_releases": true,
+            "field_release_version_format": null,
+            "field_project_homepage": [],
+            "field_project_changelog": [],
+            "field_project_demo": [],
+            "field_project_documentation": [
+                {
+                    "title": null,
+                    "url": "http://drupal.org/node/595464",
+                    "attributes": [],
+                    "display_url": null
+                }
+            ],
+            "field_project_screenshots": [],
+            "field_project_license": {
+                "title": "GNU General Public License, version 2 or later",
+                "url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+                "attributes": [],
+                "display_url": null
+            },
+            "field_project_images": [
+                {
+                    "file": {
+                        "uri": "https://www.drupal.org/api-d7/file/5818551",
+                        "id": "5818551",
+                        "resource": "file"
+                    },
+                    "alt": ""
+                }
+            ],
+            "field_supporting_organizations": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/field_collection_item/1305222",
+                    "id": "1305222",
+                    "resource": "field_collection_item"
+                }
+            ],
+            "field_project_issue_version_opts": [
+                "static",
+                "dynamic"
+            ],
+            "field_security_advisory_coverage": "covered",
+            "field_project_ecosystem": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/node/3219",
+                    "id": "3219",
+                    "resource": "node"
+                }
+            ],
+            "field_replaced_by": [],
+            "field_issue_summary_template": [],
+            "flag_project_star_user": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/405424",
+                    "id": 405424,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/3597447",
+                    "id": 3597447,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/636500",
+                    "id": 636500,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/3571535",
+                    "id": 3571535,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/111846",
+                    "id": 111846,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/3609498",
+                    "id": 3609498,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/394414",
+                    "id": 394414,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/3417517",
+                    "id": 3417517,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/3564593",
+                    "id": 3564593,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/2354574",
+                    "id": 2354574,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/1518018",
+                    "id": 1518018,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/854220",
+                    "id": 854220,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/2781215",
+                    "id": 2781215,
+                    "resource": "user"
+                }
+            ],
+            "nid": "3219",
+            "vid": "13424795",
+            "is_new": false,
+            "type": "project_module",
+            "title": "Amazon Product Advertisement API",
+            "language": "und",
+            "url": "https://www.drupal.org/project/amazon",
+            "edit_url": "https://www.drupal.org/node/3219/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1064767440",
+            "changed": "1707863423",
+            "author": {
+                "uri": "https://www.drupal.org/api-d7/user/261788",
+                "id": "261788",
+                "resource": "user",
+                "name": "willvincent"
+            },
+            "comment": "1",
+            "comments": [],
+            "comment_count": "0",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": null,
+            "has_new_content": null,
+            "last_comment_timestamp": "1065561537",
+            "project_usage": {
+                "6.x-1.x": 32,
+                "8.x-1.x": "1",
+                "7.x-2.x": 21,
+                "7.x-1.x": 129
+            }
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "self": "https://www.drupal.org/api-d7/comment?limit=1",
+    "first": "https://www.drupal.org/api-d7/comment?limit=1&page=0",
+    "last": "https://www.drupal.org/api-d7/comment?limit=1&page=11182301",
+    "next": "https://www.drupal.org/api-d7/comment?limit=1&page=1",
+    "list": [
+        {
+            "comment_body": {
+                "value": "\u003Cp\u003EWe're currently working on Access '95 integration. But Access '97 will be one of the first features when we start work on 2.0!!!\u003C/p\u003E",
+                "format": "1"
+            },
+            "cid": "5076802",
+            "name": "johnalbin",
+            "homepage": "",
+            "subject": "",
+            "url": "https://www.drupal.org/project/vaporware/issues/1166082#comment-5076802",
+            "edit_url": "https://www.drupal.org/comment/edit/5076802",
+            "created": "876044700",
+            "node": {
+                "uri": "https://www.drupal.org/api-d7/node/1166082",
+                "id": "1166082",
+                "resource": "node"
+            },
+            "author": {
+                "uri": "https://www.drupal.org/api-d7/user/32095",
+                "id": "32095",
+                "resource": "user"
+            },
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null
+        }
+    ]
+}

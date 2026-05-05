@@ -10,6 +10,10 @@ Extract valuable insights from heterogeneous FLOSS community data through
 ingestion and agentic analysis, and provide a unified, source-agnostic canonical
 model for search, analysis, and automation.
 
+## Data source provider
+
+@TODO
+
 ##
 
 Work in progress

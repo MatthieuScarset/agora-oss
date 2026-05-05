@@ -1,0 +1,99 @@
+{
+    "self": "https://www.drupal.org/api-d7/node?type=project_issue&limit=1&sort=nid&direction=DESC",
+    "first": "https://www.drupal.org/api-d7/node?type=project_issue&limit=1&sort=nid&direction=DESC&page=0",
+    "last": "https://www.drupal.org/api-d7/node?type=project_issue&limit=1&sort=nid&direction=DESC&page=1449906",
+    "next": "https://www.drupal.org/api-d7/node?type=project_issue&limit=1&sort=nid&direction=DESC&page=1",
+    "list": [
+        {
+            "taxonomy_vocabulary_9": [],
+            "body": {
+                "value": "\u003Cp\u003EWhile working on other issue, AI proposed many changes that improve code quality, these changes remove deprecations and phpstan errors, so i will commit then.\u003C/p\u003E\n\u003Cp\u003E  Resolved Issues:\u003C/p\u003E\n\u003Cp\u003E   1. PHPStan Errors (Static Analysis):\u003Cbr /\u003E\n       * Unsafe usage of new static(): Changed the CustomFilterDeleteForm class to final.\u003Cbr /\u003E\n       * Missing return value: Added the required return status in the save() method of CustomFilterForm.\u003Cbr /\u003E\n       * Undefined variable: Initialized the $result variable in the replaceCallback method of CustomFilterBaseFilter to avoid warnings about potentially undefined variables during eval().\u003Cbr /\u003E\n       * Deprecated class: Replaced the deprecated DrupalSqlBase class with SqlBase in CustomFilterMigrationSource, ensuring compatibility with Drupal 11/12.\u003Cbr /\u003E\n       * Missing attribute: Added the correct import for the #[RunTestsInSeparateProcesses] attribute in CustomFilterTest.\u003C/p\u003E\n\u003Cp\u003E   2. PHPUnit Deprecations in Drupal 11:\u003Cbr /\u003E\n       * Added the #[RunTestsInSeparateProcesses] attribute to all Kernel test classes (CustomFilterD6MigrationTest and CustomFilterD7MigrationTest), as required by the latest versions of\u003Cbr /\u003E\n         Drupal 11.\u003C/p\u003E\n\u003Cp\u003E   3. Routing Errors:\u003Cbr /\u003E\n       * Identified and fixed missing leading slashes (/) in several paths within the customfilter.routing.yml file, which is a common cause of validation failures.\u003C/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "field_issue_status": "2",
+            "field_issue_priority": "200",
+            "field_issue_category": "2",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https://www.drupal.org/api-d7/user/889254",
+                "id": "889254",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https://www.drupal.org/api-d7/node/185274",
+                "id": "185274",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "3.0.0-beta1",
+            "field_issue_last_status_change": "1778008872",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/180064",
+                    "id": 180064,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/user/889254",
+                    "id": 889254,
+                    "resource": "user"
+                }
+            ],
+            "nid": "3588539",
+            "vid": "14345252",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Improve code quality",
+            "language": "en",
+            "url": "https://www.drupal.org/project/customfilter/issues/3588539",
+            "edit_url": "https://www.drupal.org/node/3588539/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1778008439",
+            "changed": "1778008872",
+            "author": {
+                "uri": "https://www.drupal.org/api-d7/user/889254",
+                "id": "889254",
+                "resource": "user",
+                "name": "yukare"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https://www.drupal.org/api-d7/comment/16576835",
+                    "id": 16576835,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/comment/16576832",
+                    "id": 16576832,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/comment/16576838",
+                    "id": 16576838,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https://www.drupal.org/api-d7/comment/16576839",
+                    "id": 16576839,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "4",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1778008872"
+        }
+    ]
+}

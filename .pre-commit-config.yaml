@@ -70,4 +70,5 @@ repos:
     rev: v1.20.2
     hooks:
       - id: mypy
+        files: ^(tools|tests)/
         additional_dependencies: []

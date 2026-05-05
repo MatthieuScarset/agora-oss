@@ -1,0 +1,67 @@
+[
+    {
+        "nid": 1000001,
+        "title": "Views",
+        "body": "A flexible tool that makes it easy to create the perfect display of your data.",
+        "status": 1,
+        "created": 1145040000,
+        "changed": 1732886700,
+        "type": "project_module",
+        "maintainer_uid": 12345,
+        "parent_nid": null,
+        "dependency_nids": [
+            "cck"
+        ]
+    },
+    {
+        "nid": 1000002,
+        "title": "Webform",
+        "body": "Create a web form with simple drag-and-drop interface.",
+        "status": 1,
+        "created": 1200000000,
+        "changed": 1730000000,
+        "type": "project_module",
+        "maintainer_uid": 67890,
+        "parent_nid": null,
+        "dependency_nids": []
+    },
+    {
+        "nid": 1000003,
+        "title": "Panels",
+        "body": "Create custom layouts and manage content display.",
+        "status": 1,
+        "created": 1170000000,
+        "changed": 1728000000,
+        "type": "project_module",
+        "maintainer_uid": 11111,
+        "parent_nid": null,
+        "dependency_nids": [
+            "views"
+        ]
+    },
+    {
+        "nid": 3588120,
+        "title": "CKEditor Text Selection",
+        "body": "A Drupal module that integrates the CKEditor 5 Text Selection plugin into Drupal's CKEditor 5 editor. Makes the editor keep its text selection when switching between WYSIWYG and Source mode, and scrolls the selection into the viewport.",
+        "status": 1,
+        "created": 1777739335,
+        "changed": 1777743201,
+        "type": "project_module",
+        "maintainer_uid": 1079574,
+        "parent_nid": null,
+        "field_project_machine_name": "ckeditor_textselection",
+        "field_project_has_issue_queue": true,
+        "field_project_has_releases": true,
+        "field_project_license": {
+            "title": "GNU General Public License, version 2 or later",
+            "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+        },
+        "field_project_components": [
+            "Code",
+            "Documentation",
+            "Miscellaneous",
+            "User interface"
+        ],
+        "dependency_nids": []
+    }
+]

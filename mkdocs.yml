@@ -1,51 +1,6 @@
+---
 site_name: Agora OSS
-site_description: Agentic, actionable community platform with plugin-driven data ingestion
+site_description: Agentic actionable data-driven community platform.
 repo_url: https://github.com/agora-oss/agora-oss
 theme:
-  name: material
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-  features:
-    - navigation.instant
-    - navigation.tracking
-    - toc.integrate
-
-plugins:
-  - search
-  - offline
-
-nav:
-  - Home: index.md
-  - Architecture:
-      - Overview: architecture/index.md
-      - Layers:
-          - Source Layer: architecture/layers/source-layer.md
-          - Plugin Layer: architecture/layers/plugin-layer.md
-          - Normalization Layer: architecture/layers/normalization-layer.md
-          - Storage Layer: architecture/layers/storage-layer.md
-          - Retrieval Layer: architecture/layers/retrieval-layer.md
-          - API Layer: architecture/layers/api-layer.md
-          - Agent Layer: architecture/layers/agent-layer.md
-          - Dashboard Layer: architecture/layers/dashboard-layer.md
-          - Infra Layer: architecture/layers/infra-layer.md
-          - Config Layer: architecture/layers/config-layer.md
-          - Quality & Observability: architecture/layers/quality-observability-layer.md
-  - Contracts:
-      - Overview: contracts/index.md
-      - Canonical Entities: contracts/canonical-entities-v1.md
-      - Canonical Relations: contracts/canonical-relations-v1.md
-      - ID Strategy: contracts/id-strategy-v1.md
-      - Lineage & Provenance: contracts/lineage-and-provenance-v1.md
-      - Plugin Interface: contracts/plugin-interface-v1.md
-      - Plugin Capabilities: contracts/plugin-capabilities-v1.md
-      - Plugin Error Model: contracts/plugin-error-model-v1.md
-      - Plugin Health & Observability: contracts/plugin-health-and-observability-v1.md
-      - Source Config Schema: contracts/source-config-schema-v1.md
-      - Mapping Rules: contracts/mapping-rules-v1.md
-  - Verification:
-      - Overview: verification/index.md
-      - Phase 1 Acceptance: verification/phase1-acceptance.md
-      - Contract Test Matrix: verification/contract-test-matrix.md
-      - Source Onboarding Checklist: verification/source-onboarding-checklist.md
+  name: readthedocs

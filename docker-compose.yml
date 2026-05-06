@@ -124,7 +124,7 @@ services:
       prefect-server:
         condition: service_healthy
     environment:
-      PREFECT_API_URL: ${PREFECT_API_URL_INTERNAL}
+      PREFECT_API_URL: ${PREFECT_API_URL}
       PREFECT_LOGGING_LEVEL: ${PREFECT_LOG_LEVEL}
       PREFECT_WORK_POOL: ${PREFECT_WORK_POOL}
     command: >

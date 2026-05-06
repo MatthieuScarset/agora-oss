@@ -8,10 +8,10 @@ into actionable insights, a unified dashboard, and automated workflows.
 ```bash
 # Configure environment
 cp .env.example .env
-# Configure data pipelines
-cp prefect.example.yaml prefect.yaml
 # Start and boostrap local stack
 make install
+# Register Prefect deployments
+make prefect-deploy
 ```
 
 ## Infra

@@ -2,6 +2,12 @@
 
 Prefect Flows (Ingestion & Processing)
 
+Register deployments:
+
+```bash
+make prefect-deploy
+```
+
 ## Local Docker Services
 
 The local stack starts:

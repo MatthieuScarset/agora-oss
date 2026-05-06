@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 from enum import StrEnum
-from typing import Any
+from typing import Any, cast
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic_core import InitErrorDetails
 
 
 def normalize_text(value: Any) -> str:
@@ -337,9 +338,9 @@ class Plugin(BaseEntity):
 
 
 def aggregate_validation_errors(title: str, errors: list[ValidationError]) -> ValidationError:
-    line_errors: list[dict[str, Any]] = []
+    line_errors: list[InitErrorDetails] = []
     for error in errors:
         for line_error in error.errors(include_url=False):
-            line_errors.append(dict(line_error))
+            line_errors.append(cast(InitErrorDetails, dict(line_error)))
 
     return ValidationError.from_exception_data(title, line_errors=line_errors)

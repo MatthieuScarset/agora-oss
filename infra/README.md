@@ -16,6 +16,12 @@ infra/
 
 ## Usage
 
+Apply Prefect deployments after the stack is up:
+
+```bash
+make prefect-deploy
+```
+
 ### Full Infrastructure Bootstrap
 
 Bootstrap all services in the correct order and run health checks:

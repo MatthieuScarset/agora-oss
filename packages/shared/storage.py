@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 import json
-import os
-from typing import Any
+from typing import Any, cast
 
 from redis import Redis
+
+from packages.shared.settings import get_settings
 
 DEFAULT_QUEUE_NAME = "embeddings:queue"
 
 
 def get_redis_client() -> Redis:
-    redis_url = os.getenv("REDIS_URL", "redis://redis:6379/0")
-    return Redis.from_url(redis_url, decode_responses=True)
+    return Redis.from_url(get_settings().redis_url, decode_responses=True)
 
 
 def enqueue_embedding_jobs(
@@ -24,7 +24,7 @@ def enqueue_embedding_jobs(
 
     redis_client = client or get_redis_client()
     payloads = [json.dumps(job, sort_keys=True) for job in jobs]
-    return int(redis_client.rpush(queue_name, *payloads))
+    return cast(int, redis_client.rpush(queue_name, *payloads))
 
 
 def dequeue_embedding_job(
@@ -37,5 +37,5 @@ def dequeue_embedding_job(
     if item is None:
         return None
 
-    _, payload = item
-    return json.loads(payload)
+    _, payload = cast(tuple[str, str], item)
+    return cast(dict[str, Any], json.loads(payload))

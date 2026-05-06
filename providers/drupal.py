@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
-from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, ValidationError
+import httpx
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from packages.providers.base import DataSourceProvider
+from packages.providers.utils import build_http_headers, get_provider_credentials
 from packages.shared.models import Actor, Issue, Project, aggregate_validation_errors
 
 
@@ -50,9 +53,43 @@ def _extract_text_summary(body: Any) -> str | None:
     return None
 
 
-class DrupalActorRecord(BaseModel):
+def _load_incremental_state(state_file: str | None) -> dict[str, Any]:
+    """Load incremental fetch state (ETags, cursors, timestamps)."""
+    if not state_file:
+        return {}
+    try:
+        path = Path(state_file)
+        if path.exists():
+            with path.open("r", encoding="utf-8") as f:
+                return cast(dict[str, Any], json.loads(f.read()))
+    except (OSError, json.JSONDecodeError):
+        # Log warning but don't fail - treat as fresh fetch
+        pass
+    return {}
+
+
+def _save_incremental_state(state: dict[str, Any], state_file: str | None) -> None:
+    """Persist incremental fetch state."""
+    if not state_file:
+        return
+    try:
+        path = Path(state_file)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2, default=str)
+    except OSError:
+        # Log warning but don't fail - graceful degradation
+        pass
+
+
+class DrupalRecordBase(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
+    def to_entity(self, source: str) -> dict[str, Any]:
+        raise NotImplementedError
+
+
+class DrupalActorRecord(DrupalRecordBase):
     uid: Any
     created: Any
     changed: Any | None = None
@@ -80,9 +117,7 @@ class DrupalActorRecord(BaseModel):
         }
 
 
-class DrupalProjectRecord(BaseModel):
-    model_config = ConfigDict(extra="ignore")
-
+class DrupalProjectRecord(DrupalRecordBase):
     nid: Any
     created: Any
     changed: Any | None = None
@@ -120,9 +155,7 @@ class DrupalProjectRecord(BaseModel):
         }
 
 
-class DrupalIssueRecord(BaseModel):
-    model_config = ConfigDict(extra="ignore")
-
+class DrupalIssueRecord(DrupalRecordBase):
     iid: Any | None = None
     nid: Any | None = None
     created: Any
@@ -165,7 +198,7 @@ class DrupalIssueRecord(BaseModel):
 
 class DrupalProvider(DataSourceProvider):
     provider_name = "drupal"
-    record_models: dict[str, type[BaseModel]] = {
+    record_models: dict[str, type[DrupalRecordBase]] = {
         "actors": DrupalActorRecord,
         "projects": DrupalProjectRecord,
         "issues": DrupalIssueRecord,
@@ -174,6 +207,7 @@ class DrupalProvider(DataSourceProvider):
         "source": "drupal",
         "fetch_config": {
             "base_url": "https://drupal.org",
+            "use_http": False,  # Set to True to enable HTTP fetching instead of files
             "endpoints": [
                 "/api-d7/user",
                 "/api-d7/node?type=project_module",
@@ -184,36 +218,177 @@ class DrupalProvider(DataSourceProvider):
                 "projects": "data/mock/drupalorg/project_module.json",
                 "issues": "data/mock/drupalorg/project_issue.json",
             },
+            "timeout_seconds": 30,
+            "per_page": 50,  # 50 is the max unfortunately for Drupal's REST API.
         },
         "batch_size": 100,
         "retry_policy": "exponential",
+        "incremental_fetch": {
+            "enabled": False,
+            "state_file": ".incremental_state.json",  # Relative path for state
+        },
     }
+
+    def __init__(self, name: str, config: dict[str, Any]) -> None:
+        super().__init__(name, config)
+        self._incremental_state: dict[str, Any] = {}
+        self._initialize_state()
+
+    def _initialize_state(self) -> None:
+        """Load incremental fetch state if enabled."""
+        inc_config = self.config.get("incremental_fetch", self.default_config["incremental_fetch"])
+        if inc_config.get("enabled"):
+            state_file = inc_config.get("state_file")
+            if state_file:
+                self._incremental_state = _load_incremental_state(state_file)
+
+    def _fetch_from_http(
+        self, base_url: str, endpoints: list[str], credentials: dict[str, str], timeout_seconds: int
+    ) -> dict[str, list[dict[str, Any]]]:
+        """Fetch data from HTTP endpoints with pagination, caching, and incremental support."""
+        result: dict[str, list[dict[str, Any]]] = {}
+        headers = build_http_headers(credentials)
+
+        inc_config = cast(dict[str, Any], self.config.get("incremental_fetch", {}))
+        default_incremental_config = cast(dict[str, Any], self.default_config["incremental_fetch"])
+        if not inc_config:
+            inc_config = default_incremental_config
+        use_incremental = inc_config.get("enabled", False)
+
+        with httpx.Client(timeout=timeout_seconds) as client:
+            for endpoint_key, endpoint_path in enumerate(endpoints):
+                self.logger.info(f"Fetching from HTTP endpoint: {endpoint_path}")
+
+                full_url = f"{base_url.rstrip('/')}/{endpoint_path.lstrip('/')}"
+                records: list[dict[str, Any]] = []
+
+                # Build headers with incremental support
+                request_headers = headers.copy()
+                if use_incremental:
+                    etag = self._incremental_state.get(f"etag_{endpoint_key}")
+                    if etag:
+                        request_headers["If-None-Match"] = etag
+
+                try:
+                    response = client.get(full_url, headers=request_headers)
+
+                    if response.status_code == 304:
+                        # Not modified - use cached data
+                        self.logger.info(f"Cache hit (304) for {endpoint_path}")
+                        continue
+
+                    response.raise_for_status()
+
+                    # Store ETag for next time
+                    if use_incremental and "etag" in response.headers:
+                        self._incremental_state[f"etag_{endpoint_key}"] = response.headers["etag"]
+
+                    payload = response.json()
+
+                    # Parse response (support both list and Drupal envelope)
+                    if isinstance(payload, list):
+                        records = [item for item in payload if isinstance(item, dict)]
+                    elif isinstance(payload, dict):
+                        list_payload = payload.get("list")
+                        if isinstance(list_payload, list):
+                            records = [item for item in list_payload if isinstance(item, dict)]
+                        else:
+                            raise ValueError(f"Unexpected response format from {full_url}")
+                    else:
+                        raise ValueError(f"Unexpected response format from {full_url}")
+
+                    # Guess dataset name from endpoint
+                    dataset_name = self._infer_dataset_name(endpoint_path)
+                    result[dataset_name] = records
+
+                    self.logger.info(f"Fetched {len(records)} records from {endpoint_path}")
+
+                except httpx.HTTPError as e:
+                    self._handle_error("http_fetch", e)
+                    raise
+
+        # Persist state if incremental fetching is enabled
+        if use_incremental:
+            state_file = inc_config.get("state_file")
+            if state_file:
+                self._incremental_state["last_fetch"] = datetime.utcnow().isoformat()
+                _save_incremental_state(self._incremental_state, state_file)
+
+        return result
+
+    def _infer_dataset_name(self, endpoint_path: str) -> str:
+        """Infer dataset name from endpoint path."""
+        path_lower = endpoint_path.lower()
+        if "user" in path_lower:
+            return "actors"
+        if "project" in path_lower:
+            return "projects"
+        if "issue" in path_lower:
+            return "issues"
+        # Default: use last path segment
+        return path_lower.split("/")[-1].split("?")[0]
+
+    def _fetch_from_files(self) -> dict[str, list[dict[str, Any]]]:
+        """Fetch data from local files (original implementation)."""
+        fetch_config = cast(dict[str, Any], self.config.get("fetch_config", {}))
+        if not fetch_config:
+            fetch_config = cast(dict[str, Any], self.default_config["fetch_config"])
+        files = cast(
+            dict[str, Any],
+            fetch_config.get(
+                "files",
+                cast(dict[str, Any], self.default_config["fetch_config"])["files"],
+            ),
+        )
+
+        result: dict[str, list[dict[str, Any]]] = {}
+        for key, relative_path in files.items():
+            path = Path(str(relative_path))
+            with path.open("r", encoding="utf-8") as handle:
+                payload = json.load(handle)
+            records: list[dict[str, Any]]
+            if isinstance(payload, list):
+                records = [item for item in payload if isinstance(item, dict)]
+            elif isinstance(payload, dict):
+                list_payload = payload.get("list")
+                if isinstance(list_payload, list):
+                    records = [item for item in list_payload if isinstance(item, dict)]
+                else:
+                    raise ValueError(f"Expected a list or Drupal envelope in '{path}'.")
+            else:
+                raise ValueError(f"Expected a list or Drupal envelope in '{path}'.")
+
+            result[str(key)] = records
+
+        return result
 
     def fetch(self) -> dict[str, list[dict[str, Any]]]:
         self.before_fetch()
         try:
-            fetch_config = self.config.get("fetch_config", self.default_config["fetch_config"])
-            files = fetch_config.get(
-                "files",
-                self.default_config["fetch_config"]["files"],
-            )
+            fetch_config = cast(dict[str, Any], self.config.get("fetch_config", {}))
+            if not fetch_config:
+                fetch_config = cast(dict[str, Any], self.default_config["fetch_config"])
 
-            result: dict[str, list[dict[str, Any]]] = {}
-            for key, relative_path in files.items():
-                path = Path(str(relative_path))
-                with path.open("r", encoding="utf-8") as handle:
-                    payload = json.load(handle)
-                records: list[dict[str, Any]]
-                if isinstance(payload, list):
-                    records = [item for item in payload if isinstance(item, dict)]
-                elif isinstance(payload, dict) and isinstance(payload.get("list"), list):
-                    records = [item for item in payload["list"] if isinstance(item, dict)]
-                else:
-                    raise ValueError(f"Expected a list or Drupal envelope in '{path}'.")
+            # Check if we should use HTTP or files
+            use_http = fetch_config.get("use_http", False)
 
-                result[str(key)] = records
+            if use_http:
+                # Get credentials from environment
+                credentials = get_provider_credentials(self.provider_name)
+                base_url = fetch_config.get(
+                    "base_url",
+                    cast(dict[str, Any], self.default_config["fetch_config"])["base_url"],
+                )
+                endpoints = fetch_config.get(
+                    "endpoints",
+                    cast(dict[str, Any], self.default_config["fetch_config"])["endpoints"],
+                )
+                timeout = fetch_config.get("timeout_seconds", 30)
 
-            return result
+                return self._fetch_from_http(base_url, endpoints, credentials, timeout)
+            else:
+                # Use file-based fetch (default for testing)
+                return self._fetch_from_files()
         except Exception as exc:
             self._handle_error("fetch", exc)
             raise
@@ -239,8 +414,9 @@ class DrupalProvider(DataSourceProvider):
             mapped_rows = [self._map_record(dataset_name, row, source) for row in rows]
 
             try:
-                validator = TypeAdapter(list[model])
-                normalized[dataset_name] = validator.validate_python(mapped_rows)
+                normalized[dataset_name] = [
+                    model.model_validate(mapped_row) for mapped_row in mapped_rows
+                ]
             except ValidationError as exc:
                 errors.append(exc)
 
@@ -257,5 +433,5 @@ class DrupalProvider(DataSourceProvider):
         if record_model is None:
             return row
 
-        parsed = TypeAdapter(record_model).validate_python(row)
+        parsed = record_model.model_validate(row)
         return parsed.to_entity(source)

@@ -17,9 +17,8 @@
 	docker-ps \
 	docker-reset \
 	bootstrap \
-	smoke \
+	prefect-deploy \
 	destroy \
-	db-init \
 	clean
 
 # Virtual environment configuration
@@ -52,9 +51,8 @@ help:
 	@echo "  docker-ps      Show docker services status"
 	@echo "  docker-reset   Stop stack and remove volumes"
 	@echo "  bootstrap      Run infrastructure bootstrap steps"
-	@echo "  smoke          Run local stack smoke tests"
+	@echo "  prefect-deploy Register Prefect deployments"
 	@echo "  destroy        Destroy PostgreSQL database and volumes (with confirmation)"
-	@echo "  db-init        Reinitialize PostgreSQL schemas and extensions"
 	@echo ""
 	@echo "Documentation:"
 	@echo "  doc-build	Build documentation site"
@@ -159,10 +157,10 @@ bootstrap:
 	@echo "Running infrastructure bootstrap orchestrator..."
 	./infra/bootstrap.sh
 
-smoke:
-	@echo "Running local stack smoke tests..."
-	./infra/smoke_stack.sh
-	@echo "✓ Smoke tests passed"
+prefect-deploy:
+	@echo "Registering Prefect deployments via Python SDK..."
+	. $(VENV)/bin/activate && PYTHONPATH=. uv run python -m apps.workers.deployments
+	@echo "✓ Prefect deployments registered"
 
 destroy:
 	@echo "WARNING: This will destroy all PostgreSQL data and volumes!"

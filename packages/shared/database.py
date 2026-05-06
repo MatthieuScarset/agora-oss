@@ -2,15 +2,15 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 from datetime import UTC, datetime
-from typing import Any
+from typing import Any, cast
 
-from sqlalchemy import DateTime, UniqueConstraint, create_engine, text
+from sqlalchemy import Column, DateTime, UniqueConstraint, create_engine, select, text
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlmodel import Field, Session, SQLModel
 
 from packages.shared.models import BaseEntity
+from packages.shared.settings import get_settings
 
 
 class SourceRecord(SQLModel, table=True):
@@ -25,19 +25,16 @@ class SourceRecord(SQLModel, table=True):
     payload_hash: str = Field(index=True, min_length=64, max_length=64)
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(UTC),
-        sa_type=DateTime(timezone=True),
+        sa_column=Column(DateTime(timezone=True), nullable=False),
     )
     updated_at: datetime = Field(
         default_factory=lambda: datetime.now(UTC),
-        sa_type=DateTime(timezone=True),
+        sa_column=Column(DateTime(timezone=True), nullable=False),
     )
 
 
 def get_engine() -> Any:
-    database_url = os.getenv(
-        "DATABASE_URL", "postgresql://agora:agora_local_password@postgres:5432/agora"
-    )
-    return create_engine(database_url, future=True)
+    return create_engine(get_settings().database_url, future=True)
 
 
 def ensure_schema(engine: Any | None = None) -> None:
@@ -75,30 +72,20 @@ def upsert_entities(
     session: Session,
 ) -> list[dict[str, str]]:
     changed_jobs: list[dict[str, str]] = []
+    source_records_table = cast(Any, SourceRecord).__table__
 
     for entity in entities:
         payload = entity.model_dump(mode="json")
         external_id = str(entity.id)
         payload_hash = hash_payload(payload)
 
-        existing_stmt = text(
-            """
-			SELECT payload_hash
-			FROM source_records
-			WHERE source = :source
-                AND entity_type = :entity_type
-                AND external_id = :external_id
-			"""
+        existing_stmt = select(SourceRecord).where(
+            source_records_table.c.source == source,
+            source_records_table.c.entity_type == entity_type,
+            source_records_table.c.external_id == external_id,
         )
-        existing = session.exec(
-            existing_stmt,
-            {
-                "source": source,
-                "entity_type": entity_type,
-                "external_id": external_id,
-            },
-        ).first()
-        previous_hash = existing[0] if existing else None
+        existing = session.execute(existing_stmt).scalars().first()
+        previous_hash = existing.payload_hash if existing else None
 
         stmt = insert(SourceRecord).values(
             source=source,
@@ -163,9 +150,9 @@ def upsert_embedding(
 		DO UPDATE SET embedding = EXCLUDED.embedding, updated_at = NOW()
 		"""
     )
-    session.exec(
+    session.execute(
         stmt,
-        {
+        params={
             "source": source,
             "entity_type": entity_type,
             "external_id": external_id,

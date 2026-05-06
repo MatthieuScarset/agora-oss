@@ -33,3 +33,4 @@ Thumbs.db
 # Project specific
 .env
 *.log
+prefect.yaml

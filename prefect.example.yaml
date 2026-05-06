@@ -1,0 +1,24 @@
+# Prefect deployment definitions for Agora-OSS flows
+# Apply with: `prefect deployment apply deployments.yaml`
+
+flows:
+  - name: drupal-ingest
+    entrypoint: apps/workers/flows/ingest.py:provider_ingest_flow
+    parameters:
+      provider_name: drupal
+    schedule:
+      cron: "0 2 * * *"  # Daily at 2 AM UTC
+    tags:
+      - ingest
+      - drupal
+
+  - name: drupal-ingest-dev
+    entrypoint: apps/workers/flows/ingest.py:provider_ingest_flow
+    parameters:
+      provider_name: drupal
+    schedule: null
+    tags:
+      - ingest
+      - dev
+
+# You can add more deployments (realtime, large-scale, staging) as needed.

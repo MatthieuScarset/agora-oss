@@ -7,28 +7,11 @@ into actionable insights, a unified dashboard, and automated workflows.
 
 ```bash
 # Configure environment
-# Copy the example file and adjust values if needed:
 cp .env.example .env
-#
-# Start local platform stack
-make docker-up
-#
-# Open key services
-# - Prefect UI:     http://localhost:4200
-# - MinIO API (S3): http://localhost:9000
-# - MinIO Console:  http://localhost:9001
-# - PostgreSQL:     http://localhost:5432
-# - Redis:          http://localhost:6379
-# - Node.js:        http://localhost:3000
-#
-# Smoke test
-make smoke
-#
-# Bootstrap infra steps
-make bootstrap
-#
-# Stop stack
-make docker-down
+# Configure data pipelines
+cp prefect.example.yaml prefect.yaml
+# Start and boostrap local stack
+make install
 ```
 
 ## Infra

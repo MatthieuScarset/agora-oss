@@ -57,10 +57,20 @@ wait_postgres() {
   local max_attempts=60
   local attempt=0
 
+  log_info "Ensuring PostgreSQL schemas and pgvector extension exist..."
+  if docker compose -f "$PROJECT_ROOT/docker-compose.yml" --env-file "$PROJECT_ROOT/.env" exec -T postgres \
+    psql -U "${POSTGRES_USER:-agora}" -d "${POSTGRES_DB:-agora}" -v ON_ERROR_STOP=1 \
+    -c "CREATE SCHEMA IF NOT EXISTS public; CREATE SCHEMA IF NOT EXISTS prefect; CREATE EXTENSION IF NOT EXISTS vector SCHEMA public;" >/dev/null 2>&1; then
+    log_info "PostgreSQL schema repair check completed"
+  else
+    log_warn "Unable to precreate PostgreSQL schemas or pgvector extension; continuing to poll"
+  fi
+
   while [ $attempt -lt $max_attempts ]; do
-    if docker compose -f "$PROJECT_ROOT/docker-compose.yml" --env-file "$PROJECT_ROOT/.env" exec postgres \
+    log_info "Checking PostgreSQL + pgvector (attempt $((attempt + 1))/${max_attempts})..."
+    if docker compose -f "$PROJECT_ROOT/docker-compose.yml" --env-file "$PROJECT_ROOT/.env" exec -T postgres \
       psql -U "${POSTGRES_USER:-agora}" -d "${POSTGRES_DB:-agora}" \
-      -c "SELECT extname FROM pg_extension WHERE extname = 'vector';" >/dev/null 2>&1 | grep -q vector; then
+      -Atqc "SELECT extname FROM pg_extension WHERE extname = 'vector';" | grep -qx vector; then
       log_info "PostgreSQL with pgvector is ready"
       return 0
     fi
@@ -94,28 +104,69 @@ wait_minio() {
   exit 1
 }
 
+# Check and install MinIO client if needed
+check_minio_client() {
+  local minio_client_url="https://dl.min.io/client/mc/release/linux-amd64/mc"
+
+  # Check if minio-mc is already installed
+  if which minio-mc >/dev/null 2>&1; then
+    log_info "MinIO client is already installed"
+    return 0
+  fi
+
+  # MinIO client not found
+  log_warn "MinIO client is not installed"
+  echo ""
+  echo "The MinIO client is required to bootstrap MinIO."
+  echo "Download URL: $minio_client_url"
+  echo ""
+  read -p "Would you like to install MinIO client now? (y/n) " -n 1 -r
+  echo ""
+
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    log_info "Installing MinIO client..."
+    mkdir -p ~/.local/bin
+    curl -L -o ~/.local/bin/minio-mc "$minio_client_url" || { log_error "Failed to download MinIO client"; exit 1; }
+    chmod +x ~/.local/bin/minio-mc || { log_error "Failed to make MinIO client executable"; exit 1; }
+
+    # Verify installation
+    if which minio-mc >/dev/null 2>&1; then
+      log_info "MinIO client installed successfully"
+      return 0
+    else
+      log_error "MinIO client not found in PATH. Please add ~/.local/bin to your PATH."
+      exit 1
+    fi
+  else
+    log_error "MinIO client is required. Please install from: $minio_client_url"
+    exit 1
+  fi
+}
+
 # Bootstrap MinIO bucket
 bootstrap_minio() {
   log_info "Bootstrapping MinIO bucket..."
 
+  # Check and ensure MinIO client is available
+  check_minio_client
+
   local bucket="${S3_BUCKET:-agora-raw}"
-  local max_attempts=30
-  local attempt=0
+  local endpoint="http://localhost:${MINIO_API_PORT:-9000}"
 
-  # Configure MinIO alias and create bucket
-  while [ $attempt -lt $max_attempts ]; do
-    if mc alias set local "http://localhost:${MINIO_API_PORT:-9000}" "${MINIO_ROOT_USER}" "${MINIO_ROOT_PASSWORD}" >/dev/null 2>&1; then
-      mc mb --ignore-existing "local/${bucket}" 2>/dev/null || true
-      log_info "MinIO bootstrap completed (bucket: ${bucket})"
-      return 0
-    fi
+  log_info "Configuring MinIO client alias..."
+  if ! timeout 15s minio-mc alias set local "$endpoint" "${MINIO_ROOT_USER}" "${MINIO_ROOT_PASSWORD}" >/dev/null 2>&1; then
+    log_error "Failed to configure MinIO client alias for ${endpoint}"
+    exit 1
+  fi
 
-    attempt=$((attempt + 1))
-    sleep 2
-  done
+  log_info "Creating MinIO bucket: ${bucket}"
+  if ! timeout 15s minio-mc mb --ignore-existing "local/${bucket}" >/dev/null 2>&1; then
+    log_error "Failed to create MinIO bucket: ${bucket}"
+    exit 1
+  fi
 
-  log_error "Failed to bootstrap MinIO bucket"
-  exit 1
+  log_info "MinIO bootstrap completed (bucket: ${bucket})"
+  return 0
 }
 
 # Wait for Redis
@@ -126,7 +177,8 @@ wait_redis() {
   local attempt=0
 
   while [ $attempt -lt $max_attempts ]; do
-    if docker compose -f "$PROJECT_ROOT/docker-compose.yml" --env-file "$PROJECT_ROOT/.env" exec redis \
+    log_info "Checking Redis (attempt $((attempt + 1))/${max_attempts})..."
+    if docker compose -f "$PROJECT_ROOT/docker-compose.yml" --env-file "$PROJECT_ROOT/.env" exec -T redis \
       redis-cli ping >/dev/null 2>&1; then
       log_info "Redis is ready"
       return 0
@@ -145,7 +197,8 @@ bootstrap_prefect() {
   log_info "Bootstrapping Prefect work pool..."
 
   if ! command -v prefect >/dev/null 2>&1; then
-    log_warn "prefect CLI not found, skipping Prefect bootstrap"
+    log_warn "prefect CLI not found. Did you actived the virtual env? "source .venv/bin/activate""
+    log_warn "Skipping Prefect bootstrap"
     return
   fi
 
@@ -220,6 +273,21 @@ run_smoke_tests() {
   log_info "✓ All smoke checks completed successfully"
 }
 
+# Display service URLs
+display_service_urls() {
+  echo ""
+  echo "=========================================="
+  echo "Service URLs:"
+  echo "=========================================="
+  echo "Prefect UI:      http://localhost:${PREFECT_API_PORT:-4200}"
+  echo "MinIO Console:   http://localhost:${MINIO_CONSOLE_PORT:-9001}"
+  echo "Frontend:        http://localhost:${FRONTEND_PORT:-3000}"
+  echo "Redis:           localhost:${REDIS_PORT:-6379}"
+  echo "PostgreSQL:      localhost:${POSTGRES_PORT:-5432}"
+  echo "=========================================="
+  echo ""
+}
+
 # Main orchestration
 main() {
   log_info "Starting Agora infrastructure bootstrap..."
@@ -235,6 +303,7 @@ main() {
   run_smoke_tests
 
   log_info "✓ All infrastructure bootstrapped successfully!"
+  display_service_urls
 }
 
 # Only run main if script is executed directly (not sourced)

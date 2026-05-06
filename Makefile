@@ -1,4 +1,26 @@
-.PHONY: help install doc-build doc-serve doc-deploy doc-view test lint typecheck validate-fixtures check precommit docker-up docker-down docker-logs docker-ps docker-reset bootstrap smoke clean
+.PHONY: \
+	help \
+	install \
+	doc-build \
+	doc-serve \
+	doc-deploy \
+	doc-view \
+	test \
+	lint \
+	typecheck \
+	validate-fixtures \
+	check \
+	precommit \
+	docker-up \
+	docker-down \
+	docker-logs \
+	docker-ps \
+	docker-reset \
+	bootstrap \
+	smoke \
+	destroy \
+	db-init \
+	clean
 
 # Virtual environment configuration
 VENV := .venv
@@ -29,8 +51,10 @@ help:
 	@echo "  docker-logs    Tail docker stack logs"
 	@echo "  docker-ps      Show docker services status"
 	@echo "  docker-reset   Stop stack and remove volumes"
-	@echo "  bootstrap     Run infrastructure bootstrap steps"
+	@echo "  bootstrap      Run infrastructure bootstrap steps"
 	@echo "  smoke          Run local stack smoke tests"
+	@echo "  destroy        Destroy PostgreSQL database and volumes (with confirmation)"
+	@echo "  db-init        Reinitialize PostgreSQL schemas and extensions"
 	@echo ""
 	@echo "Documentation:"
 	@echo "  doc-build	Build documentation site"
@@ -44,6 +68,8 @@ install: $(VENV)/bin/activate
 	. $(VENV)/bin/activate && uv sync
 	@echo "✓ Dependencies installed"
 	uv run pre-commit install
+	make docker-up
+	make bootstrap
 
 $(VENV)/bin/activate:
 	@echo "Creating virtual environment..."
@@ -138,6 +164,16 @@ smoke:
 	./infra/smoke_stack.sh
 	@echo "✓ Smoke tests passed"
 
+destroy:
+	@echo "WARNING: This will destroy all PostgreSQL data and volumes!"
+	@read -p "Are you sure? Type 'yes' to confirm: " confirm; \
+	if [ "$$confirm" = "yes" ]; then \
+		echo "Destroying PostgreSQL database and volumes..."; \
+		$(COMPOSE) down -v --remove-orphans; \
+		echo "✓ PostgreSQL database and volumes destroyed"; \
+	else \
+		echo "Cancelled"; \
+	fi
 
 # Clean up build artifacts
 clean:

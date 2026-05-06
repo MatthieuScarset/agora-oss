@@ -65,10 +65,8 @@ repos:
     rev: v0.15.12
     hooks:
       - id: ruff
-        args: ['--fix']
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.20.2
     hooks:
       - id: mypy
-        files: ^(tools|tests)/
-        additional_dependencies: []
+        pass_filenames: false

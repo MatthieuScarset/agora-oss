@@ -108,7 +108,7 @@ test:
 # Run lint checks
 lint:
 	@echo "Running lint checks..."
-	. $(VENV)/bin/activate && uv run ruff check .
+	. $(VENV)/bin/activate && uv run ruff format && uv run ruff check --fix
 	@echo "✓ Lint passed"
 
 # Run static type checks

@@ -55,14 +55,10 @@ class AppSettings(BaseSettings):
         "postgresql+asyncpg://agora:agora_local_password@postgres:5432/agora"
     )
     prefect_server_database_sqlalchemy_connect_args_search_path: str = "prefect, public"
+    prefect_deploy_image: str = "prefecthq/prefect:3-python3.14"
 
     node_env: str = "development"
     frontend_port: int = 3000
-
-    drupal_token: str | None = None
-    drupal_api_key: str | None = None
-    drupal_username: str | None = None
-    drupal_password: str | None = None
 
 
 @lru_cache(maxsize=1)

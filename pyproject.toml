@@ -40,7 +40,7 @@ target-version = "py312"
 select = ["E", "F", "I", "W"]
 
 [tool.mypy]
-files = ["apps", "packages", "providers"]
+files = ["apps", "packages"]
 python_version = "3.12"
 strict = true
 warn_unused_configs = true

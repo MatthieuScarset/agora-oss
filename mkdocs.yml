@@ -1,6 +1,0 @@
----
-site_name: Agora OSS
-site_description: Agentic actionable data-driven community platform.
-repo_url: https://github.com/agora-oss/agora-oss
-theme:
-  name: readthedocs

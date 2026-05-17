@@ -1,35 +1,13 @@
-# Virtual environments
-.venv/
-venv/
-ENV/
-env/
-
-# Build artifacts
-site/
-dist/
-build/
-
 # Python
+.venv/
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-*.egg-info/
-.eggs/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store
 .AppleDouble
 .LSOverride
 Thumbs.db
-
-# Project specific
-.env
 *.log
+
+# Project
+.env

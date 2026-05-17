@@ -4,15 +4,7 @@ version = "0.1.0"
 description = "Open-source knowledge graph for FLOSS community data"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "fastapi>=0.136.1",
-    "jsonschema>=4.22.0",
-    "mkdocs>=1.5.0",
-    "pre-commit>=4.6.0",
-    "pydantic>=2.13.3",
-    "pydantic-ai>=1.89.1",
-    "pyyaml>=6.0.2",
-]
+dependencies = ["pre-commit>=4.6.0", "pydantic>=2.13.3", "pyyaml>=6.0.2"]
 
 [dependency-groups]
 dev = [
@@ -37,8 +29,5 @@ select = ["E", "F", "I", "W"]
 python_version = "3.12"
 strict = true
 warn_unused_configs = true
-files = ["tools", "tests"]
-
-[[tool.mypy.overrides]]
-module = ["jsonschema"]
-ignore_missing_imports = true
+files = ["apps/api", "tests"]
+exclude = ["node_modules"]

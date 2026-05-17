@@ -9,6 +9,9 @@ dependencies = [
     "pydantic>=2.13.3",
     "pyyaml>=6.0.2",
     "typer>=0.25.1",
+    "prefect>=2.10.0",
+    "pandas>=2.2.0",
+    "pyarrow>=12.0.0",
 ]
 
 [dependency-groups]

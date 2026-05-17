@@ -1,30 +1,26 @@
 # Roadmap
 
-This roadmap details each phase of the Agora project.
-It covers the MVP, multi-provider expansion, and scalable agentic
-orchestration.
+This roadmap details each phase of the Agora OSS project.
 
 ## Phase 0 - MVP
 
 ### Phase 0 — Goal
 
- Prove Agora's end-to-end value with one source and one entity type.
+Prove Agora's end-to-end value with one source and one entity type.
 
 Key items:
 
 - fetch raw issues from Drupal.org
 - normalize into Agora models
-- build agent-assisted data products
-- expose semantic-searchable insights on a dashboard
+- expose widgets on a dashboard
 
 ### Phase 0 — Deliverables
 
-- Drupal.org issue harvester (single project or small set)
-- Raw-to-Agora transform: `Issue`
-- Local lakehouse for raw + normalized data (parquet)
-- Agentic data product generation
-- Dashboard + semantic search
-- BDD-style Markdown validation specs
+- Provider abstraction and ingestion interfaces
+- Shared normalization pipeline across sources
+- Resilient retries and checkpointing for harvests - DAG with Prefect
+- Functional ETL pipeline from raw Drupal.org to normalized Agora `Issues`
+- Basic boostraph dashboard displaying totals in widgets
 
 ## Phase 1 - Additional providers
 
@@ -35,10 +31,8 @@ Extend provider support and prove reuse of the canonical model.
 ### Phase 1 — Deliverables
 
 - Add WordPress and Symfony providers
-- Provider abstraction and ingestion interfaces
-- Shared normalization pipeline across sources
-- Data product generation for multiple providers
-- Basic CI for ingestion flows
+- More agent-assisted data products showcasing actionable insights
+- Semantic search
 
 ## Phase 2 - Scalable orchestration
 
@@ -49,7 +43,6 @@ Harden orchestration, scale for large datasets, and enrich agent actions.
 ### Phase 2 — Deliverables
 
 - Scalable orchestration and scheduling
-- Resilient retries and checkpointing for harvests
 - Vector DB-backed semantic search
 - Enhanced agent workflows for recommendations
 - Observability and reliability improvements

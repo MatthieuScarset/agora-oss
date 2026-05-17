@@ -1,57 +1,71 @@
 # 00-MVP Acceptance Criteria
 
-Acceptance checklist (pass/fail)
+This document lists measurable checks for each core MVP story. Each check
+is runnable locally and intended to be promoted to CI later.
 
-1. JSON validity
+Story: Ingest (harvester)
 
-- Assert that `data/mock/drupalorg/issues.json` parses as JSON.
- Recommended tools: `jq` or Python `json.load`.
+- Check: Running the harvester with `--input data/mock/drupalorg/issues.json`
+ creates a harvest directory `data/raw/drupal/issues/{harvest_id}/` containing
+ gzipped page files and `manifest.json` + `checkpoint.json`.
 
-1. Harvester
+Story: Normalize (normalizer)
 
--- Run the harvester example command and assert a harvest directory exists at
- `data/raw/drupal/issues/{harvest_id}/` with non-zero-sized page files.
--- Assert that `manifest.json` and `checkpoint.json` exist in the harvest dir.
+- Check: Running the normalizer against a harvest directory writes at least
+ one parquet file to `data/normalized/drupal/issues/`.
+- Schema: Parquet column names and types match the canonical `Issue` schema in
+ `requirements.md` and contain non-null `nid`, `title`, and `author_id` in at
+ least one row.
 
-1. Normalizer
+Story: Productize (agent)
 
--- Run the normalizer example command against a harvest directory and assert
- that `data/normalized/drupal/issues/` contains at least one parquet file.
--- Validate the parquet schema matches `requirements.md` (column names and
- types).
--- Validate at least one row has non-null values for `nid`, `title`, and
- `author_id`.
+- Check: Running the agent with `report_type=issue_overview` writes
+ `data/marts/00-mvp/issue_overview.json` with keys `top_issues` (list) and
+ `summary_text` (string).
 
-1. Agentic product
+Story: Search index (embeddings/indexer)
 
--- Assert that `data/marts/00-mvp/issue_overview.json` exists and contains
- the keys `top_issues` and `summary_text`.
+- Check: Running the indexer produces vector files under
+ `data/marts/00-mvp/embeddings/` (or a small `index.sqlite`) and at least one
+ stored embedding can be queried.
 
-1. Semantic search index
+## Quick verification examples
 
--- Assert that `data/marts/00-mvp/embeddings/` contains index files or a
- small `index.sqlite` manifest, and that at least one embedding vector is
- stored.
-
-## Verification commands (examples)
+Python (quick checks):
 
 ```python
 import json
 import pyarrow.parquet as pq
 
-print('json load ok', json.load(open('data/mock/drupalorg/issues.json'))!=None)
+print('json load ok', json.load(open('data/mock/drupalorg/issues.json')) is not None)
 print('parquet files', pq.ParquetDataset('data/normalized/drupal/issues').files)
+```
+
+Shell (example):
+
+```bash
+# run harvester
+python -m scripts.harvest --provider drupal --input data/mock/drupalorg/issues.json --out data/raw/drupal/issues/
+
+# check for manifest and pages
+ls data/raw/drupal/issues/*/manifest.json
+ls data/raw/drupal/issues/*/pages/*.json.gz
+
+# run normalizer
+python -m scripts.normalize --in data/raw/drupal/issues/*/ --out data/normalized/drupal/
+
+# list parquet files
+find data/normalized/drupal/issues -name "*.parquet" | head
 ```
 
 ## Minimal pass criteria
 
-- All steps 1–4 succeed locally.
--- Artifacts exist under `data/raw/drupal/issues/{harvest_id}/`,
+- All story checks succeed locally and artifacts exist under `data/raw/`,
  `data/normalized/`, and `data/marts/00-mvp/`.
 
 ## Notes
 
--- If parquet writing requires additional dependencies, document them in
- `pyproject.toml` before implementation.
--- BDD scenarios are intentionally runnable via simple Python scripts. They
- should be adapted into CI workflows later.
+- If parquet writing needs dependencies, add them to `pyproject.toml` and
+ document local setup steps.
+- BDD scenarios in `bdd.md` are intended to be runnable and should be
+ adapted into CI later.

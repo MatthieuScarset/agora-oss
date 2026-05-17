@@ -1,53 +1,61 @@
 # 00-MVP BDD Scenarios
 
-Scenario: Harvest Drupal issues (harvester)
+Feature: Harvesting
 
-Given `data/mock/drupalorg/issues.json` is present
-When the harvester is executed for provider `drupal` and project `drupal`
-And a harvest ID is assigned for the run
-Then a raw JSON output set appears under
-`data/raw/drupal/issues/{harvest_id}/pages/`.
-And `manifest.json` and `checkpoint.json` are written in the harvest
-directory.
-And the harvested payload contains the input data.
+ Scenario: Harvest Drupal issues
+  Given `data/mock/drupalorg/issues.json` is present
+  When I run the harvester for provider "drupal" with an explicit `harvest_id`
+  Then a raw output set is created at `data/raw/drupal/issues/{harvest_id}/`
+  And the directory contains `pages/*.json.gz`, `manifest.json`, and `checkpoint.json`
 
-Example command (developer-run):
+ Example (developer):
 
-python -m scripts.harvest \
- --provider drupal \
- --project drupal \
- --harvest-id 2026-05-17T12-00-00Z_8f3a \
- --input data/mock/drupalorg/issues.json \
- --out data/raw/drupal/issues/
+ ```bash
+ python -m scripts.harvest \
+  --provider drupal \
+  --input data/mock/drupalorg/issues.json \
+  --out data/raw/drupal/issues/
+ ```
 
-Scenario: Normalize raw issues → Issue parquet
+Feature: Normalization
 
-Given a raw harvest directory at `data/raw/drupal/issues/{harvest_id}/`
-When the normalizer runs
-Then it writes `data/normalized/drupal/issues/part-*.parquet` with a schema
-matching `requirements.md`.
-And the parquet contains at least one row where `nid`, `title`, and
-`author_id` are non-null.
+ Scenario: Normalize raw pages into canonical Issue parquet
+  Given a raw harvest directory `data/raw/drupal/issues/{harvest_id}/`
+  When I run the normalizer against that directory
+  Then `data/normalized/drupal/issues/part-*.parquet` is written
+  And the parquet schema matches the canonical `Issue` schema
+  And at least one row has non-null `nid`, `title`, and `author_id`
 
-Example command:
+ Example:
 
-python -m scripts.normalize \
- --provider drupal \
- --in data/raw/drupal/issues/harvest_id=2026-05-17T12-00-00Z_8f3a/ \
- --out data/normalized/drupal/
+ ```bash
+ python -m scripts.normalize --in data/raw/drupal/issues/*/ --out data/normalized/drupal/
+ ```
 
-Scenario: Agentic data product generation
+Feature: Agentic data product
 
-Given normalized `Issue` parquet files
-When the agent runs `generate_summary(report_type=issue_overview)`
-Then a JSON summary is produced in
-`data/marts/00-mvp/issue_overview.json` containing the top-5 issues by
-`comment_count` and a short text synopsis.
+ Scenario: Generate issue overview summary
+  Given normalized `Issue` parquet files in `data/normalized/drupal/issues/`
+  When the agent runs `generate_summary(report_type=issue_overview)`
+  Then `data/marts/00-mvp/issue_overview.json` exists
+  And the JSON contains `top_issues` (list) and `summary_text` (string)
 
-Scenario: Dashboard / semantic search smoke
+ Example:
 
-Given `data/marts/00-mvp/` contains `issue_overview.json` and embeddings exist
-When a local semantic-search indexer is run
-Then a small vector index file exists under
-`data/marts/00-mvp/embeddings/` and a sample query returns at least one
-relevant issue id.
+ ```bash
+ python -m scripts.agent --report-type issue_overview --in data/normalized/drupal/ --out data/marts/00-mvp/
+ ```
+
+Feature: Semantic search smoke
+
+ Scenario: Build a small embeddings index
+  Given `data/marts/00-mvp/issue_overview.json` and normalized issues exist
+  When I run the local indexer
+  Then embeddings are written under `data/marts/00-mvp/embeddings/`
+  And a sample query returns at least one relevant issue id
+
+ Example:
+
+ ```bash
+ python -m scripts.index_embeddings --in data/normalized/drupal/ --out data/marts/00-mvp/embeddings/
+ ```

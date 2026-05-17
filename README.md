@@ -15,45 +15,6 @@ cp .env.example .env
 
 ---
 
-## Repository layout (sketch)
+Orchestrated by [Matthieu Scarset](https://matthieuscarset.com).
 
-Top-level folders and purpose (minimal placeholders):
-
-```text
-apps/
- api/           # FastAPI service
- mcp/           # Optional MCP server
-workers/
- flows/         # Prefect flows
- tasks/         # Prefect tasks
- agents/        # Pluggable agent implementations
- tools/         # Shared agent tools
-packages/
- agora/         # core Python package
- shared/        # shared utilities/models
-specs/
- mission.md
- roadmap.md
- stack.md
- 00-mvp/
-  plan.md
-  requirements.md
-  validation.md
-  features/
-   issues/
-data/
- raw/
- normalized/
- marts/
- schema/
-tests/
- unit/
- integration/
- bdd/
-docs/
-ci/
-```
-
----
-
-Made by Github Copilot. Orchestrated by [Matthieu Scarset](https://matthieuscarset.com).
+Made by `Github Copilot` using mostly `GPT-5 mini`.

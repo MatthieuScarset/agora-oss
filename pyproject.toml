@@ -5,17 +5,19 @@ description = "Open-source knowledge graph for FLOSS community data"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "pre-commit>=4.6.0",
+    "polars>=1.40.1",
     "pydantic>=2.13.3",
     "pyyaml>=6.0.2",
     "typer>=0.25.1",
-    "prefect>=2.10.0",
-    "pandas>=2.2.0",
-    "pyarrow>=12.0.0",
 ]
 
 [dependency-groups]
-dev = ["pytest>=8.3.2", "ruff>=0.6.9", "types-pyyaml>=6.0.12.20250516"]
+dev = [
+    "pre-commit>=4.6.0",
+    "pytest>=8.3.2",
+    "ruff>=0.6.9",
+    "types-pyyaml>=6.0.12.20250516",
+]
 
 [tool.pytest.ini_options]
 minversion = "8.0"
@@ -27,14 +29,3 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]
-
-[project.scripts]
-agora-agent-runner = "workers.agents.runner:app"
-
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["packages"]
-include = ["*"]

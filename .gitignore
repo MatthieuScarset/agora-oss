@@ -13,3 +13,4 @@ Thumbs.db
 # Project
 .env
 logs
+data

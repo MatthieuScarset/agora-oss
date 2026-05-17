@@ -8,12 +8,11 @@ orchestration.
 
 ### Phase 0 — Goal
 
-Prove Agora's end-to-end value with one source and one entity type.
+ Prove Agora's end-to-end value with one source and one entity type.
 
 Key items:
 
 - fetch raw issues from Drupal.org
-- normalize into Agora models
 - normalize into Agora models
 - build agent-assisted data products
 - expose semantic-searchable insights on a dashboard
@@ -21,7 +20,7 @@ Key items:
 ### Phase 0 — Deliverables
 
 - Drupal.org issue harvester (single project or small set)
-- Raw-to-Agora transform: `Issue`, `Actor`
+- Raw-to-Agora transform: `Issue`
 - Local lakehouse for raw + normalized data (parquet)
 - Agentic data product generation
 - Dashboard + semantic search

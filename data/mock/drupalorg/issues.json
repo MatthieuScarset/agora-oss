@@ -1,0 +1,3938 @@
+{
+    "self": "https:\/\/www.drupal.org\/api-d7\/node?type=project_issue\u0026sort=changed\u0026direction=ASC",
+    "first": "https:\/\/www.drupal.org\/api-d7\/node?type=project_issue\u0026sort=changed\u0026direction=ASC\u0026page=0",
+    "last": "https:\/\/www.drupal.org\/api-d7\/node?type=project_issue\u0026sort=changed\u0026direction=ASC\u0026page=29023",
+    "next": "https:\/\/www.drupal.org\/api-d7\/node?type=project_issue\u0026sort=changed\u0026direction=ASC\u0026page=1",
+    "list": [
+        {
+            "body": {
+                "value": "\u003Cp\u003Ethe \u0022teaser\u0022 \/ \u0022read more\u0022 handling doesnt work properly - the index page shows \/complete\/ articles, not just teasers and the \u0022read more\u0022 link.\u003C\/p\u003E\n\u003Cp\u003Ereason: function node($node, $main = 0) in sunflower.theme is missing something like\u003C\/p\u003E\n\u003Cpre class=\u0022codeblock\u0022\u003E\u003Ccode class=\u0022language-php\u0022\u003Eif ($main \u0026amp;\u0026amp; $node-\u0026gt;teaser) {\n  echo check_output($node-\u0026gt;teaser, 1);\n}\nelse {\n  echo check_output($node-\u0026gt;body, 1);           \n}\n\n\u003C\/code\u003E\u003C\/pre\u003E\u003Cp\u003E(this is from unconed.theme)\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1008695516",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                    "id": 2,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "15",
+            "vid": "2897929",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "sunflower.theme: incorrect \u0022teaser\u0022 \/ \u0022read more\u0022 handling",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/15",
+            "edit_url": "https:\/\/www.drupal.org\/node\/15\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1008695516",
+            "changed": "1010515673",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287095",
+                    "id": 287095,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287096",
+                    "id": 287096,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1741978025"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Eas title: i think it\u0027s a common standard in web gui\u0027s (mail clients, forums, etc.) to select entries in overview pages by title, not by numer\/ID.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1011059096",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                    "id": 2,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "54",
+            "vid": "2898001",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "project.module: show individual entry by clicking title, not ID",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/54",
+            "edit_url": "https:\/\/www.drupal.org\/node\/54\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1011059096",
+            "changed": "1011305209",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287157",
+                    "id": 287157,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287156",
+                    "id": 287156,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1011305209"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EAfter you save or update a user\u0027s record from the \u0022user management\u0022-page in the admin section, you are redirected to an empty user page.  I guess the user ID got lost during the redirect.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1009026170",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                }
+            ],
+            "nid": "25",
+            "vid": "2897947",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Saving\/updating user information",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/25",
+            "edit_url": "https:\/\/www.drupal.org\/node\/25\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1009026170",
+            "changed": "1012209632",
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287110",
+                    "id": 287110,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287111",
+                    "id": 287111,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1596218724"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThe current code at drop.org doesn\u0027t obey the \u0027newest first\u0027 choice when displaying comments in Flat mode. Seems OK in threaded modes.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1010032002",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "36",
+            "vid": "2897973",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Comment sorting broken",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/36",
+            "edit_url": "https:\/\/www.drupal.org\/node\/36\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1010032002",
+            "changed": "1012209669",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287134",
+                    "id": 287134,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287135",
+                    "id": 287135,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1596219070"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EIn Drupal CVS up to date as of today, the \u0022administer\u0022 links on nodes (the links of the form \/admin.php?mod=node\u0026amp;op=edit\u0026amp;id=15) produce the following error:\u003C\/p\u003E\n\u003Cp\u003EFatal error: Call to undefined function: comments_all() in \/home\/www\/gnudist.org\/modules\/comment.module on line 547\u003C\/p\u003E\n\u003Cp\u003EDid this function go away in a recent update?\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1009920779",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/4",
+                    "id": 4,
+                    "resource": "user"
+                }
+            ],
+            "nid": "30",
+            "vid": "2897953",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "node \u0022administer\u0022 links broken",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/30",
+            "edit_url": "https:\/\/www.drupal.org\/node\/30\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1009920779",
+            "changed": "1012574670",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/4",
+                "id": "4",
+                "resource": "user",
+                "name": "gnudist"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287114",
+                    "id": 287114,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287115",
+                    "id": 287115,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1012574670"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003E(\u0022project-list\u0022 meaning \u0022mod=project\u0026amp;op=list\u0022), which makes your submission a mess (missing form fields; and your submission won\u0027t get assigned a project ...)\u003C\/p\u003E\n\u003Cp\u003Efix: add $pid to the globals in  function project_list($query) and replace every \u0022$project-\u0026gt;pid\u0022 in that function with $pid.\u003C\/p\u003E\n\u003Cp\u003Eas i can\u0027t submit a patch here (html-filtering and markup probs, line breaks), i\u0027ll attach a corresponding patch in a reply to this mail.\u003C\/p\u003E\n\u003Cp\u003Ep.s. would be nice if a patch could be uploaded \/ attached to a bug report.\u003C\/p\u003E\n\u003Cp\u003Ep.p.s. \u0026lt;code\u0026gt; and \u0026lt;pre\u0026gt; \u0022Allowed HTML tag\u0022 wouldnt hurt ...\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1014118056",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "82",
+            "vid": "2898039",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "project.module: missing pid in project-list \u003E submit new|search",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/82",
+            "edit_url": "https:\/\/www.drupal.org\/node\/82\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014118056",
+            "changed": "1014121179",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287185",
+                    "id": 287185,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1014121179"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EA module for the display of a printer-friendly page for a node and\/or comment(s).\u003C\/p\u003E\n\u003Cp\u003EThis feature is \u003Ca href=\u0022http:\/\/mail.zind.net\/pipermail\/drupal-devel\/2001-December\/002645.html\u0022 rel=\u0022nofollow\u0022\u003Ediscussed on drupal-devel\u003C\/a\u003E and created by Gerhard and Kjartan. The \u003Ca href=\u0022http:\/\/mail.zind.net\/pipermail\/drupal-devel\/2001-December\/002634.html\u0022 rel=\u0022nofollow\u0022\u003Emost recent version of the module\u003C\/a\u003E currently interferes with the chatbox. \u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1009470498",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                    "id": 2,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/6",
+                    "id": 6,
+                    "resource": "user"
+                }
+            ],
+            "nid": "28",
+            "vid": "2897951",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "print.module",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/28",
+            "edit_url": "https:\/\/www.drupal.org\/node\/28\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1009470498",
+            "changed": "1014907141",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/6",
+                "id": "6",
+                "resource": "user",
+                "name": "carl ditzler"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287112",
+                    "id": 287112,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287113",
+                    "id": 287113,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1596218869"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003ESome form of a feature, that allows an announcement to be at the top of the storiespage. So that when people comes to the website, there will be an announcement (welcoming screen) at the top of the page, no matter how many stories are quequed later.\u003C\/p\u003E\n\u003Cp\u003EOr a feature that sets a story outside the date sortorder, so that it stays at the top until it is put back in the date sortorder again. Rather this in fact...\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "User interface",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1010247294",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                    "id": 2,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/41",
+                    "id": 41,
+                    "resource": "user"
+                }
+            ],
+            "nid": "40",
+            "vid": "2897983",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Static\/anchored nodes",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/40",
+            "edit_url": "https:\/\/www.drupal.org\/node\/40\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1010247294",
+            "changed": "1014907164",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/41",
+                "id": "41",
+                "resource": "user",
+                "name": "Salamartin"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287140",
+                    "id": 287140,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287141",
+                    "id": 287141,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287142",
+                    "id": 287142,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287143",
+                    "id": 287143,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287144",
+                    "id": 287144,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "5",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1596219262"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EAdministration: node settings displayed in both \u0022settings and filters\u0022 and \u0022content management\u0022 \u0026gt; \u0022settings\u0022\u003C\/p\u003E\n\u003Cp\u003Ei think it should be only in latter.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "6",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "User interface",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1008700163",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "17",
+            "vid": "2897933",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "admin: node settings displayed in both \u0022settings and filters\u0022 an",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/17",
+            "edit_url": "https:\/\/www.drupal.org\/node\/17\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1008700163",
+            "changed": "1017752551",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287102",
+                    "id": 287102,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1017752551"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThis Yaroon theme is in the CVS distro but not in the array in conf.php. We should be consistent.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1014117865",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "81",
+            "vid": "2898037",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Yaroon theme in distribution but not in conf.php",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/81",
+            "edit_url": "https:\/\/www.drupal.org\/node\/81\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014117865",
+            "changed": "1017752653",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287183",
+                    "id": 287183,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287184",
+                    "id": 287184,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1017752653"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ei posed another bug a week ago (\u003Ca href=\u0022http:\/\/www.drupal.org\/node.php?id=83\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/node.php?id=83\u003C\/a\u003E), but i used the link from \u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=project\u0026amp;pid=1\u0026amp;op=list\u0026amp;type=bug\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/module.php?mod=project\u0026amp;pid=1\u0026amp;op=list\u0026amp;type=bug\u003C\/a\u003E\u003C\/p\u003E\n\u003Cp\u003Ethe bug did not get added to the main \u0022open bugs\u0022 listing (and so i bet no one saw it) \u003C\/p\u003E\n\u003Cp\u003Emaybe my bug wasn\u0027t assigned to the \u0022drupal\u0022 project; i can find the bug by searching for the word \u0022theme\u0022 with project=all, but if project=drupal, it doesn\u0027t come up (i reposted and that one does come up, but #83 does not).  \u003C\/p\u003E\n\u003Cp\u003Eso if you click on \u0022drupal\u0022 under \u0022project info\u0022 and start your bug from there, i guess it is assigned to drupal and then and it shows up, but if you just click on \u0022bugs\u0022 under \u0022project info\u0022 and then submit from there, the bug does not show up on the main listing and hence may get lost (but can be found by searching)\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "User interface",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014681954",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                    "id": 155,
+                    "resource": "user"
+                }
+            ],
+            "nid": "89",
+            "vid": "2898065",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "bug report doesn\u0027t show up if submitted the wrong way",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/89",
+            "edit_url": "https:\/\/www.drupal.org\/node\/89\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014681954",
+            "changed": "1017752705",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                "id": "155",
+                "resource": "user",
+                "name": "bshanks@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287204",
+                    "id": 287204,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287205",
+                    "id": 287205,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287206",
+                    "id": 287206,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287207",
+                    "id": 287207,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287208",
+                    "id": 287208,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "5",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1017752705"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Eon page \u003Ca href=\u0022http:\/\/site\/module.php?mod=privatemsg\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/site\/module.php?mod=privatemsg\u003C\/a\u003E rather than displaying the senders name it displays anonymous.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1016413357",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "110",
+            "vid": "2898145",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "privatemsg.module not showing user\u0027s name",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/110",
+            "edit_url": "https:\/\/www.drupal.org\/node\/110\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1016413357",
+            "changed": "1017766446",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287263",
+                    "id": 287263,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287264",
+                    "id": 287264,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287265",
+                    "id": 287265,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1017766446"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ewhen installing cvs drupal, update.php attempts to run all updates since 1\/17\/2002. but the update for that day was already performed in database.mysql (2002-01-17 ALTER TABLE users ADD data TEXT). so this update fails. the proper update to begin with is update_20()\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "5",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1018265133",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "121",
+            "vid": "2898179",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Update.php and database.mysql not in sync",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/121",
+            "edit_url": "https:\/\/www.drupal.org\/node\/121\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1018265133",
+            "changed": "1018908493",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287306",
+                    "id": 287306,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1018908493"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ei\u0027m of the opinion that cvs.module should be removed from the main distro and put into the Contrib. Very few Drupal admins will want to use this module. I think rating.module is pretty specialized too, but I don\u0027t feel strongly about this one.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1018265824",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "122",
+            "vid": "2898181",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "remove cvs.module from distro",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/122",
+            "edit_url": "https:\/\/www.drupal.org\/node\/122\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1018265824",
+            "changed": "1018908924",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287307",
+                    "id": 287307,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1018908924"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EI installed the latest version of Drupal from CVS and created the database with the script provided. When I started Drupal in my web browser an error was displayed that the table \u0027system\u0027 did not exists.\u003C\/p\u003E\n\u003Cp\u003EThe script (database\/database.mysql) does not contain this table.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Miscellaneous",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1019738104",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/22",
+                    "id": 22,
+                    "resource": "user"
+                }
+            ],
+            "nid": "144",
+            "vid": "144",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Database table \u0027system\u0027 missing from script",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/144",
+            "edit_url": "https:\/\/www.drupal.org\/node\/144\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1019738104",
+            "changed": "1020175448",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/22",
+                "id": "22",
+                "resource": "user",
+                "name": "nethyperon"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287366",
+                    "id": 287366,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287367",
+                    "id": 287367,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020175448"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EI\u0027d love for someone to create an FAQ module. Here is what I imagine:\u003C\/p\u003E\n\u003Cp\u003EFUNCTIONAL SPEC\u003Cbr \/\u003E\nA user with sufficient permissions may create a question. Then users submit comments on that question, using the usual comment module. The author of the question, or any administrator, may mark any given comments as an \u0027answer\u0027. Answers are displayed with special formatting so as to stand out from usual comments.  A given question can have multiple \u0027answer\u0027 comments.\u003C\/p\u003E\n\u003Cp\u003EIt would be interesting, but not necessary for first version, if any node could later be designated a Question. And its subsequent comments marked as answers. This would mean that FAQ entries could come from Forum, or any other module.\u003C\/p\u003E\n\u003Cp\u003EENGINEERING NOTES\u003Cbr \/\u003E\nOne approach is for the FAQ module is for it to be a hierarchy of nodes, like the book module. All nodes marked as Questions are included in the hierarchy. It consists of FAQ nodes, but also forum nodes, book nodes, etc. Not sure how thr rendering would work. Do you render all nodes in the FAQ format or in their native format?\u003C\/p\u003E\n\u003Cp\u003EThe model FAQ site is \u003Ca href=\u0022http:\/\/www.faqts.com\/\u0022 rel=\u0022nofollow\u0022\u003EFAQTS\u003C\/a\u003E\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1010847284",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "45",
+            "vid": "2897993",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Create an FAQ module",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/45",
+            "edit_url": "https:\/\/www.drupal.org\/node\/45\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1010847284",
+            "changed": "1020260351",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287152",
+                    "id": 287152,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287153",
+                    "id": 287153,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020260351"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003ECurrently there is a simple \u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=search\u0022 rel=\u0022nofollow\u0022\u003Esearch feature\u003C\/a\u003E [1] and basic \u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=calendar\u0022 rel=\u0022nofollow\u0022\u003Earchive page\u003C\/a\u003E [2]. These two functions could be extended and combined to make a powerful search and archive feature.\u003C\/p\u003E\n\u003Cp\u003EBasically: search.module + calendar.module = archive.module\u003C\/p\u003E\n\u003Cp\u003EThis would help solve the current problem of content that falls off the front page dissapear into a void.\u003C\/p\u003E\n\u003Cp\u003E[1] \u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=search\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/module.php?mod=search\u003C\/a\u003E\u003Cbr \/\u003E\n[2] \u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=calendar\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/module.php?mod=calendar\u003C\/a\u003E\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "3",
+            "field_issue_component": "User interface",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1011006150",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/67",
+                    "id": 67,
+                    "resource": "user"
+                }
+            ],
+            "nid": "50",
+            "vid": "2897997",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "More powerful search\/archive function",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/50",
+            "edit_url": "https:\/\/www.drupal.org\/node\/50\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1011006150",
+            "changed": "1020260487",
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287154",
+                    "id": 287154,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287155",
+                    "id": 287155,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020260487"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThe members.module no longer works, I believe it to be something to do with the recent modifications to users\/roles.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1020341446",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "160",
+            "vid": "2898289",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "members.module",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/160",
+            "edit_url": "https:\/\/www.drupal.org\/node\/160\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1020341446",
+            "changed": "1020369123",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287408",
+                    "id": 287408,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020369123"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003E\u003Ci\u003Ethe header image is not hyperlinked to \u0027Home\u0027 in the Unconed Theme (and possibly other themes). Would be nice if it were.\u003C\/i\u003E [\u003Ca href=\u0022http:\/\/www.drop.org\/module.php?mod=blog\u0026amp;id=120\u0026amp;date=1013945400\u0022 rel=\u0022nofollow\u0022\u003Eweitzman\u003C\/a\u003E]\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "User interface",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1013960160",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                    "id": 2,
+                    "resource": "user"
+                }
+            ],
+            "nid": "78",
+            "vid": "2898025",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Need link of header image",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/78",
+            "edit_url": "https:\/\/www.drupal.org\/node\/78\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1013960160",
+            "changed": "1020420867",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user",
+                "name": "Kjartan"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287173",
+                    "id": 287173,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020420867"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EOne thing I realised when coding the weblinks module is that the option of adding target=\u0022_blank\u0022 to the link is missing.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1019767316",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "146",
+            "vid": "2898251",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "addition of option for target=\u0022_blank\u0022 to l()",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/146",
+            "edit_url": "https:\/\/www.drupal.org\/node\/146\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1019767316",
+            "changed": "1020436018",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287371",
+                    "id": 287371,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287372",
+                    "id": 287372,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287373",
+                    "id": 287373,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287374",
+                    "id": 287374,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "4",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "3",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020436018"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EI am recieving the following error upon creating a second vocabulary on the taxonomy admin page:\u003C\/p\u003E\n\u003Cp\u003E\u003Ci\u003Ewarning: Bad arguments to implode() in \/users\/alted\/www\/modules\/taxonomy.module on line 78.\u003C\/i\u003E\u003C\/p\u003E\n\u003Cp\u003EI\u0027m not sure if this happens when creating your initial vocabulary.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1020339689",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "158",
+            "vid": "158",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "error creating vocabulary",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/158",
+            "edit_url": "https:\/\/www.drupal.org\/node\/158\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1020339689",
+            "changed": "1020436044",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287404",
+                    "id": 287404,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287405",
+                    "id": 287405,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287406",
+                    "id": 287406,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020436044"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThe comment controls section never remembers my preference for \u0027Threaded List - Expanded\u0027 across sessions. I think this bug was fixed once but it is back and evident now on drop.org\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1016703664",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "115",
+            "vid": "2898155",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Comment Control - not remembering threading preference",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/115",
+            "edit_url": "https:\/\/www.drupal.org\/node\/115\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1016703664",
+            "changed": "1020440798",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287269",
+                    "id": 287269,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287270",
+                    "id": 287270,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287271",
+                    "id": 287271,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287272",
+                    "id": 287272,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "4",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020440798"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EPolls do not show the subject (or question) for the current running poll after a vote has been cast.\u003C\/p\u003E\n\u003Cp\u003EThe user ends up with a meaningless block that says something like:\u003C\/p\u003E\n\u003Cp\u003ELatest poll\u003C\/p\u003E\n\u003Cp\u003EYes 100%\u003Cbr \/\u003E\nNo 0%\u003Cbr \/\u003E\nOfcourse! 0%\u003C\/p\u003E\n\u003Cp\u003ETotal votes: 4\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1018910485",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                    "id": 10,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                    "id": 28,
+                    "resource": "user"
+                }
+            ],
+            "nid": "128",
+            "vid": "2898195",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Poll does not show subject",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/128",
+            "edit_url": "https:\/\/www.drupal.org\/node\/128\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1018910485",
+            "changed": "1020469939",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                "id": "28",
+                "resource": "user",
+                "name": "remco-at-rc6.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287317",
+                    "id": 287317,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287318",
+                    "id": 287318,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1020469939"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Enodes viewed from the submission queue (module.php?mod=queue\u0026amp;op=view\u0026amp;id=[node-id]) show\u003C\/p\u003E\n\u003Cp\u003E[node-box]\u003Cbr \/\u003E\n\u00a0\u00a0[node-title]\u003Cbr \/\u003E\n\u00a0\u00a0[node-content]\u003Cbr \/\u003E\n\u00a0\u00a0[node-links: \u0022add new comment\u0022]\u003Cbr \/\u003E\n[\/node-box]\u003C\/p\u003E\n\u003Cp\u003E[moderate-box]\u003C\/p\u003E\n\u003Cp\u003Enodes in normal view (node.php?id=[node-id]) show:\u003C\/p\u003E\n\u003Cp\u003E[node-box]\u003Cbr \/\u003E\n\u00a0\u00a0[node-title]\u003Cbr \/\u003E\n\u00a0\u00a0[node-content]\u003Cbr \/\u003E\n\u00a0\u00a0[node-links: \u0022authors blog\u0022, ..., \u0022add new comment\u0022]\u003Cbr \/\u003E\n[\/node-box]\u003C\/p\u003E\n\u003Cp\u003E[comments]\u003C\/p\u003E\n\u003Cp\u003Ei think that the view from the submission queue should be the same as normal view, that is:\u003C\/p\u003E\n\u003Cp\u003E- include comments (below moderate-box). this would, among others, allow for viewing the voting rationals of other voters.\u003Cbr \/\u003E\n- include \/all\/ node links (\u0022authors blog\u0022, etc)\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1014304334",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "85",
+            "vid": "2898047",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "nodes in submission queue don\u0027t show comments nor proper links",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/85",
+            "edit_url": "https:\/\/www.drupal.org\/node\/85\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014304334",
+            "changed": "1021234850",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287188",
+                    "id": 287188,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287189",
+                    "id": 287189,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287190",
+                    "id": 287190,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287191",
+                    "id": 287191,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287192",
+                    "id": 287192,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287193",
+                    "id": 287193,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287194",
+                    "id": 287194,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "7",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021234850"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Eafter switching my theme to \u0022stone age\u0022 on drop.org, i get the following message whenever i try to access a page on that site while logged in:\u003C\/p\u003E\n\u003Cp\u003EFatal error: Cannot instantiate non-existent class: theme_stone age in \/var\/www\/drop.org\/includes\/theme.inc on line 82\u003C\/p\u003E\n\u003Cp\u003E(the message appears whether i use mozilla or lynx)\u003C\/p\u003E\n\u003Cp\u003E(Perhaps this isn\u0027t the appropriate place to report a drop.org specific bug -- i was referred here by \u003Ca href=\u0022http:\/\/www.drop.org\/node.php?id=162\u0022 rel=\u0022nofollow\u0022\u003Ewww.drop.org\/node.php?id=162\u003C\/a\u003E)\u003C\/p\u003E\n\u003Cp\u003Ethanks\u003C\/p\u003E\n\u003Cp\u003E(p.s. i dunno which version drop.org is running, please change if wrong)\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "User interface",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014681647",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                    "id": 155,
+                    "resource": "user"
+                }
+            ],
+            "nid": "88",
+            "vid": "2898059",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "stone age theme causes problem on drop.org",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/88",
+            "edit_url": "https:\/\/www.drupal.org\/node\/88\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014681647",
+            "changed": "1021234881",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                "id": "155",
+                "resource": "user",
+                "name": "bshanks@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287199",
+                    "id": 287199,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287200",
+                    "id": 287200,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287201",
+                    "id": 287201,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287202",
+                    "id": 287202,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287203",
+                    "id": 287203,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "5",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021234881"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EWhile exploring book.module for use as an FAQ manager, I\u0027ve unearthed a problem with the book overview page. You can easily see the problem by reviewing my 3 page book at \u003Ca href=\u0022http:\/\/demo.drupal.org\/admin.php?mod=book\u0026amp;op=view\u0026amp;id=4\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/demo.drupal.org\/admin.php?mod=book\u0026amp;op=view\u0026amp;id=4\u003C\/a\u003E (sign in with your \u003Ca href=\u0022http:\/\/www.drop.org\u0022 rel=\u0022nofollow\u0022\u003Ewww.drop.org\u003C\/a\u003E username if necessary). Now click on the top page of the book entitled \u0027MW Demo Book\u0027 (\u003Ca href=\u0022http:\/\/demo.drupal.org\/node.php?id=4\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/demo.drupal.org\/node.php?id=4\u003C\/a\u003E). This is the broken page -  only 1 child link is displayed. But the prior page told you that 2 child nodes should be dislayed. The missing node is not a book page. It is a blog entry. I suspect that book gets confused when its pages are nodes instead of book pages (not sure about this conclusion). You can see that the \u0027missing node\u0027 *is* properly recognized drill down into the book - \u003Ca href=\u0022http:\/\/demo.drupal.org\/node.php?id=5\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/demo.drupal.org\/node.php?id=5\u003C\/a\u003E. The \u0027missing node\u0027 is now properly hyperlinked under \u0027next\u0027.\u003C\/p\u003E\n\u003Cp\u003EI\u0027m hopeful that someone more familiar with the guts of book can squash this bug. The bug is easily repeatable on your development instance by adding a node to the book which is *not* a book page.\u003C\/p\u003E\n\u003Cp\u003E-moshe\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1017142576",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "116",
+            "vid": "2898159",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Book page not linking to all child nodes",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/116",
+            "edit_url": "https:\/\/www.drupal.org\/node\/116\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1017142576",
+            "changed": "1021234900",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287273",
+                    "id": 287273,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287274",
+                    "id": 287274,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021234900"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003E[this is a \u0022reopening\u0022 of bug #75 (\u003Ca href=\u0022http:\/\/www.drupal.org\/node.php?id=75\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/node.php?id=75\u003C\/a\u003E) which somehow got lost -  it doesn\u0027t appear in the bug list even though it is \u0022Active\u0022; and doing an update (\u003Ca href=\u0022http:\/\/www.drupal.org\/module.php?mod=project\u0026amp;op=update\u0026amp;id=75\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drupal.org\/module.php?mod=project\u0026amp;op=update\u0026amp;id=75\u003C\/a\u003E) yields an \u0022Error. Try again.\u0022)]\u003C\/p\u003E\n\u003Cp\u003EWhen I open a book page in submission queue, I can\u0027t see a log message what author has added to node (sometimes this could be the only clue what has changed). \u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1018799424",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "126",
+            "vid": "2898189",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Where is book log message?",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/126",
+            "edit_url": "https:\/\/www.drupal.org\/node\/126\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1018799424",
+            "changed": "1021234957",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287313",
+                    "id": 287313,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287314",
+                    "id": 287314,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021234957"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EWhen you create a poll, and then go back in to edit it via content management\/edit node, it defaults back to 5 items, so if you had more than 5 in it before, you lose the ones greater than 5.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1021113417",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                    "id": 10,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/148",
+                    "id": 148,
+                    "resource": "user"
+                }
+            ],
+            "nid": "169",
+            "vid": "2898327",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Poll doesnt save the number of poll items",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/169",
+            "edit_url": "https:\/\/www.drupal.org\/node\/169\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021113417",
+            "changed": "1021415428",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/148",
+                "id": "148",
+                "resource": "user",
+                "name": "simon@www.dirtbike.ws"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287437",
+                    "id": 287437,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287438",
+                    "id": 287438,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021415428"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EYou are unable to comment and read other users comment if a poll is set up to only show as a block.\u003C\/p\u003E\n\u003Cp\u003EI made \u003Ca href=\u0022http:\/\/content.rc6.org\/patches\/poll.diff\u0022 target=\u0022_blank\u0022 rel=\u0022nofollow\u0022\u003Ea quick patch\u003C\/a\u003E, but there\u0027s surely a more elegant way to do this.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                "id": "10",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1020437447",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                    "id": 10,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                    "id": 28,
+                    "resource": "user"
+                }
+            ],
+            "nid": "162",
+            "vid": "2898293",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Unable to view poll comments",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/162",
+            "edit_url": "https:\/\/www.drupal.org\/node\/162\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1020437447",
+            "changed": "1021415460",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                "id": "28",
+                "resource": "user",
+                "name": "remco-at-rc6.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287409",
+                    "id": 287409,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287410",
+                    "id": 287410,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021415460"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003ECosmetical issue: when viewing a node through queue.module (instead of node.php), comments are indented one level too deep.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1021415592",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                    "id": 10,
+                    "resource": "user"
+                }
+            ],
+            "nid": "181",
+            "vid": "2898351",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Queue.mod: comments are indented too much",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/181",
+            "edit_url": "https:\/\/www.drupal.org\/node\/181\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021415592",
+            "changed": "1021678482",
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287453",
+                    "id": 287453,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287454",
+                    "id": 287454,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021678482"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003ETheres still a couple of problems with the user mails:\u003C\/p\u003E\n\u003Cp\u003E\u003Cb\u003Eregistering a news account:\u003C\/b\u003E\u003C\/p\u003E\n\u003Cp\u003Etest123,\u003C\/p\u003E\n\u003Cp\u003EThank you for registering at Alted.co.uk. You may now login to %urlmodule.php?mod=login using the following username\u003Cbr \/\u003E\nand password:\u003C\/p\u003E\n\u003Cp\u003Eusername: test123\u003C\/p\u003E\n\u003Cp\u003Epassword: perldark\u003C\/p\u003E\n\u003Cp\u003EAfter logging in, you may wish to change your password at %pathmodule.php?mod=user\u0026amp;op=edit\u003C\/p\u003E\n\u003Cp\u003EYour new Alted.co.uk membership also enables to you to login to other Drupal powered web sites (e.g. \u003Ca href=\u0022http:\/\/www.drop.org\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drop.org\u003C\/a\u003E) without registering. Just use the following Drupal ID and password:\u003C\/p\u003E\n\u003Cp\u003EDrupal ID: test123@\u003Cbr \/\u003E\npassword: perldark\u003C\/p\u003E\n\u003Cp\u003E--  Alted.co.uk team\u003C\/p\u003E\n\u003Cp\u003E\u003Cb\u003EForgotten password mail:\u003C\/b\u003E\u003C\/p\u003E\n\u003Cp\u003Etest123,\u003C\/p\u003E\n\u003Cp\u003EHere is your new password for Alted.co.uk. You may now login to %urlmodule.php?mod=login using the following username\u003Cbr \/\u003E\nand password:\u003C\/p\u003E\n\u003Cp\u003Eusername: test123\u003C\/p\u003E\n\u003Cp\u003Epassword: herocola\u003C\/p\u003E\n\u003Cp\u003EAfter logging in, you may wish to change your password at %pathmodule.php?mod=user\u0026amp;op=edit\u003C\/p\u003E\n\u003Cp\u003EYour new Alted.co.uk membership also enables to you to login to other Drupal powered web sites (e.g. \u003Ca href=\u0022http:\/\/www.drop.org\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drop.org\u003C\/a\u003E) without registering. Just use the following Drupal ID and password:\u003C\/p\u003E\n\u003Cp\u003EDrupal ID: \u003Ca href=\u0022mailto:test123@www.alted.co.uk\u0022 rel=\u0022nofollow\u0022\u003Etest123@www.alted.co.uk\u003C\/a\u003E\u003C\/p\u003E\n\u003Cp\u003Epassword: herocola\u003C\/p\u003E\n\u003Cp\u003E--  Alted.co.uk team\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1021537243",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "183",
+            "vid": "2898353",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "User registration \u0026amp; password reminder mails",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/183",
+            "edit_url": "https:\/\/www.drupal.org\/node\/183\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021537243",
+            "changed": "1021714589",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287455",
+                    "id": 287455,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287456",
+                    "id": 287456,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287457",
+                    "id": 287457,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287458",
+                    "id": 287458,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "4",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021714589"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EChanging the date format in the admin section does not have effect on how the date is shown on the pages itself.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "5",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1021201597",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/91",
+                    "id": 91,
+                    "resource": "user"
+                }
+            ],
+            "nid": "174",
+            "vid": "2898341",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "date format",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/174",
+            "edit_url": "https:\/\/www.drupal.org\/node\/174\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021201597",
+            "changed": "1021850157",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/91",
+                "id": "91",
+                "resource": "user",
+                "name": "raido@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287444",
+                    "id": 287444,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287445",
+                    "id": 287445,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021850157"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ethe marking of unread comments (the red asterisk) should also be applied to the \u0027recent comments\u0027 page (tracker module)\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1011650627",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/39",
+                    "id": 39,
+                    "resource": "user"
+                }
+            ],
+            "nid": "61",
+            "vid": "2898005",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "marking unread comments in tracker",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/61",
+            "edit_url": "https:\/\/www.drupal.org\/node\/61\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1011650627",
+            "changed": "1021850725",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/39",
+                "id": "39",
+                "resource": "user",
+                "name": "polaar@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287160",
+                    "id": 287160,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021850725"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Eafter switching my theme to \u0022stone age\u0022 on drop.org, i get the following message whenever i try to access a page on that site while logged in:\u003C\/p\u003E\n\u003Cp\u003EFatal error: Cannot instantiate non-existent class: theme_stone age in \/var\/www\/drop.org\/includes\/theme.inc on line 82\u003C\/p\u003E\n\u003Cp\u003E(the message appears whether i use mozilla and lynx)\u003C\/p\u003E\n\u003Cp\u003E(Perhaps this isn\u0027t the appropriate place to report a drop.org specific bug -- i was referred here by \u003Ca href=\u0022http:\/\/www.drop.org\/node.php?id=162\u0022 rel=\u0022nofollow\u0022\u003Ewww.drop.org\/node.php?id=162\u003C\/a\u003E)\u003C\/p\u003E\n\u003Cp\u003Ethanks\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014159775",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                    "id": 155,
+                    "resource": "user"
+                }
+            ],
+            "nid": "83",
+            "vid": "2898041",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "stone age theme causes problem on drop.org",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/83",
+            "edit_url": "https:\/\/www.drupal.org\/node\/83\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014159775",
+            "changed": "1021851840",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                "id": "155",
+                "resource": "user",
+                "name": "bshanks@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287186",
+                    "id": 287186,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021851840"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Eafter switching my theme to \u0022stone age\u0022 on drop.org, i get the following message whenever i try to access a page on that site while logged in:\u003C\/p\u003E\n\u003Cp\u003EFatal error: Cannot instantiate non-existent class: theme_stone age in \/var\/www\/drop.org\/includes\/theme.inc on line 82\u003C\/p\u003E\n\u003Cp\u003E(the message appears whether i use mozilla and lynx)\u003C\/p\u003E\n\u003Cp\u003E(Perhaps this isn\u0027t the appropriate place to report a drop.org specific bug -- i was referred here by \u003Ca href=\u0022http:\/\/www.drop.org\/node.php?id=162\u0022 rel=\u0022nofollow\u0022\u003Ewww.drop.org\/node.php?id=162\u003C\/a\u003E)\u003C\/p\u003E\n\u003Cp\u003Ethanks\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014159886",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                    "id": 155,
+                    "resource": "user"
+                }
+            ],
+            "nid": "84",
+            "vid": "2898043",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "stone age theme causes problem on drop.org",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/84",
+            "edit_url": "https:\/\/www.drupal.org\/node\/84\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014159886",
+            "changed": "1021851889",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/155",
+                "id": "155",
+                "resource": "user",
+                "name": "bshanks@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287187",
+                    "id": 287187,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1021851889"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThis is a cool module which helps newbies understand the jargon which always crops up when specilists talk about a topic. Doctors discuss CBC and EKG and CCs. Web developers keep talking about CSS, P2P, XSLT, etc. This is all intimidating for newbies.\u003C\/p\u003E\n\u003Cp\u003EThis module does the following:\u003C\/p\u003E\n\u003Cp\u003E- let users add\/delete\/edit glossary nodes. A sample glossary node is:\u003C\/p\u003E\n\u003Cp\u003ETitle: XSLT\u003Cbr \/\u003E\nTeaser Extensible Stylesheet Language\u003Cbr \/\u003E\nBody: A type of XML document which provides instructions for transforming one XML document into another. Often used to transform an XML document into HTML.\u003C\/p\u003E\n\u003Cp\u003E- write a Drupal filter which looks for known glossary entries in the user\u0027s post and insert a small image next to each glossary entry. The image URL is configurable by Admin. The \u0026lt;title\u0026gt; attribute of the image is the \u0027teaser\u0027. The image is hyperlinked to the full glossary node. This way, a nuser only has to hover over a term to get a taste of its meaning, but can access the full description when desired.\u003Cbr \/\u003E\n- a nice enhancement to this filter would be to automatically add glossary nodes to the database when they are encountered. I suggest that any sequence of 3 or more capital letters should be added automatically. These nodes should be added with status=0 so an Admin or other privelleged user can add a teaser and title and then publish the glossary node by setting the status=1.\u003Cbr \/\u003E\n- a glossary_page() function might provide a nice way to read through all the glossary nodes if a user wanted to do that. Taxonomy provides a helpful mechanism for catagorizing these nodes.\u003C\/p\u003E\n\u003Cp\u003ENOTES\u003Cbr \/\u003E\n- what if the glossary term is already hyperlinked when we discover it i nthe filter? Can we nest a linked image within an \u0026lt;A\u0026gt; tag? Do we rewrite the existing \u003Ca rel=\u0022nofollow\u0022\u003E to close and then open after our insertion? Or just ignore the glossary term in this case?\u003C\/a\u003E\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1020261619",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "156",
+            "vid": "2898281",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Create a glossary.module",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/156",
+            "edit_url": "https:\/\/www.drupal.org\/node\/156\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1020261619",
+            "changed": "1022124011",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287397",
+                    "id": 287397,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287398",
+                    "id": 287398,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287399",
+                    "id": 287399,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022124011"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EClicking on recent comments returns a list like this:\u003C\/p\u003E\n\u003Ctable cellpadding=\u00225\u0022\u003E\n\u003Ctr\u003E\n\u003Ctd\u003E\n7 comments attached to node Documentation thoughts:\n\u003Cp\u003EHot Damn! (replies: 0)\u003Cbr \/\u003E\nI\u0027ll try. (replies: 0)\u003Cbr \/\u003E\nlink descriptions (contextual help) (replies: 1)\u003Cbr \/\u003E\nMaybe (replies: 0)\u003Cbr \/\u003E\nCould you provide us some exa (replies: 1)\u003Cbr \/\u003E\nAction points (replies: 1)\u003Cbr \/\u003E\ninitial experience is important (replies: 2)\u003C\/p\u003E\n\u003Cp\u003E1 comment attached to node what about a forum?:\u003C\/p\u003E\n\u003Cp\u003Estill stormy? ;) (replies: 0)\u003C\/p\u003E\u003C\/td\u003E\n\u003C\/tr\u003E\n\u003C\/table\u003E\n\u003Cp\u003EIf I click on Action points (replies: 1)  I should see the Action Point comment and some navigation to the child comment.  In fact, on the results page, I can\u0027t be tell that there are children to the message. \u003C\/p\u003E\n\u003Cp\u003EIs it me?  I see this problem on both drop.org and drupal.org.  I am using the sunflower theme.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1010094891",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/15",
+                    "id": 15,
+                    "resource": "user"
+                }
+            ],
+            "nid": "37",
+            "vid": "2897977",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Missing Children when looking at recent comments",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/37",
+            "edit_url": "https:\/\/www.drupal.org\/node\/37\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1010094891",
+            "changed": "1022698790",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/15",
+                "id": "15",
+                "resource": "user",
+                "name": "j0e@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287136",
+                    "id": 287136,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287137",
+                    "id": 287137,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287138",
+                    "id": 287138,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287139",
+                    "id": 287139,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "4",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "3",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698790"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ethis project module lets a Guest update a feature but the actual update fails (rightly so) with an access warning. it would be better never to present the \u0027update feature\u0027 link to these users.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014567863",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "87",
+            "vid": "2898055",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "project module - Update link should not appear for Guests",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/87",
+            "edit_url": "https:\/\/www.drupal.org\/node\/87\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014567863",
+            "changed": "1022698807",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user",
+                "name": "moshe weitzman"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287196",
+                    "id": 287196,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287197",
+                    "id": 287197,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287198",
+                    "id": 287198,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698807"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EText of the following form:\u003C\/p\u003E\n\u003Cp\u003E This is foo style=\u0022something\u0022 bar.\u003C\/p\u003E\n\u003Cp\u003Egets filtered into:\u003C\/p\u003E\n\u003Cp\u003E This is foo\u003C\/p\u003E\n\u003Cp\u003EIt seems to happen in most modules (comment, book, ... but not in blog).\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1014902934",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/10",
+                    "id": 10,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "95",
+            "vid": "2898085",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "HTML filter bug: \u0027style\u0027 gets filtered out",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/95",
+            "edit_url": "https:\/\/www.drupal.org\/node\/95\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1014902934",
+            "changed": "1022698823",
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287220",
+                    "id": 287220,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287221",
+                    "id": 287221,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287222",
+                    "id": 287222,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287223",
+                    "id": 287223,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287224",
+                    "id": 287224,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287225",
+                    "id": 287225,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "6",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "2",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698823"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EIt seems that the Drupal link tag is no longer functioning in the latest CVS version.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1018974019",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                    "id": 28,
+                    "resource": "user"
+                }
+            ],
+            "nid": "135",
+            "vid": "2898223",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Link tags bug",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/135",
+            "edit_url": "https:\/\/www.drupal.org\/node\/135\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1018974019",
+            "changed": "1022698838",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/28",
+                "id": "28",
+                "resource": "user",
+                "name": "remco-at-rc6.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287339",
+                    "id": 287339,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287340",
+                    "id": 287340,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287341",
+                    "id": 287341,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698838"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003Ejust noticed that with the new drupal_url() using \u0026amp;amp; as argument separator, rss feeds generate bad \u0026lt;link\u0026gt;s, e.g.\u003C\/p\u003E\n\u003Cp\u003E\u0026lt;link\u0026gt;\u003Ca href=\u0022http:\/\/localhost\/drupal\/module.php?mod=blog\u0026amp;amp;amp;op=view\u0026amp;amp;amp;id=1\u0026lt;\/link\u0026gt;\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/localhost\/drupal\/module.php?mod=blog\u0026amp;amp;amp;op=view\u0026amp;amp;amp;id=1...\u003C\/a\u003E\u003C\/p\u003E\n\u003Cp\u003Ereason is the \u0022htmlentities($link)\u0022 in format_rss_channel() and format_rss_item() which escape \u0026amp;s which are escaped already.\u003C\/p\u003E\n\u003Cp\u003Esolution is probably to not \u0022htmlentities\u0022 links - but i\u0027m not really sure. what do you think?\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1019836124",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                }
+            ],
+            "nid": "152",
+            "vid": "2898261",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "bad links in rss feeds",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/152",
+            "edit_url": "https:\/\/www.drupal.org\/node\/152\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1019836124",
+            "changed": "1022698853",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                "id": "8",
+                "resource": "user",
+                "name": "ax"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287383",
+                    "id": 287383,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287384",
+                    "id": 287384,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287385",
+                    "id": 287385,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698853"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003ELooking at drop.org, I used to be able to vote on an item in the moderation queue, and then go back and see complete status information, ie.:\u003C\/p\u003E\n\u003Ctable cellpadding=\u00222,\u0022 cellspacing=\u00220\u0022\u003E\n\u003Ctr\u003E\n\u003Ctd width=\u002220\u0022\u003E\u00a0\u003C\/td\u003E\n\u003Ctd\u003E\nModeration results\n\u003Cp\u003Ej0e voted \u0027+ 1\u0027.\u003Cbr \/\u003E\n\u003Ca href=\u0022mailto:Kyrlin@www.alted.co.uk\u0022 rel=\u0022nofollow\u0022\u003EKyrlin@www.alted.co.uk\u003C\/a\u003E voted \u0027- 1\u0027.\u003Cbr \/\u003E\nGreg voted \u0027+ 1\u0027.\u003Cbr \/\u003E\njlamos voted \u0027+ 1\u0027.\u003C\/p\u003E\u003C\/td\u003E\n\u003C\/tr\u003E\n\u003C\/table\u003E\n\u003Cp\u003EThis no longer works.  I think that after voting on an item, you should be returned to \u003Ca href=\u0022http:\/\/www.drop.org\/node.php?id=\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drop.org\/node.php?id=\u003C\/a\u003E{articleID}.  This would confirm that you voted and show the Moderation Results Box.  \u003C\/p\u003E\n\u003Cp\u003EIn addition, at any time after you\u0027ve voted on an item, you should be able to click on it\u0027s title from the moderation queue page an be sent to \u003Ca href=\u0022http:\/\/www.drop.org\/node.php?id=\u0022 rel=\u0022nofollow\u0022\u003Ehttp:\/\/www.drop.org\/node.php?id=\u003C\/a\u003E{articleID} where you can see the status of the voting.\u003C\/p\u003E\n\u003Cp\u003EOne question, should people be able to see what others have voted before submitting their own vote?  This is not currently possible and I\u0027m not sure if I have an opinion.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1020778565",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/15",
+                    "id": 15,
+                    "resource": "user"
+                }
+            ],
+            "nid": "164",
+            "vid": "2898297",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Moderation Results Box",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/164",
+            "edit_url": "https:\/\/www.drupal.org\/node\/164\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1020778565",
+            "changed": "1022698888",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/15",
+                "id": "15",
+                "resource": "user",
+                "name": "j0e@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287413",
+                    "id": 287413,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287414",
+                    "id": 287414,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287415",
+                    "id": 287415,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698888"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EIn administration user management, user accounts, the authenciated user listing gives the following sql error:\u003Cbr \/\u003E\nuser error: Unknown column \u0027role\u0027 in \u0027where clause\u0027\u003Cbr \/\u003E\nquery: SELECT uid, name, timestamp FROM users WHERE\u003Cbr \/\u003E\nrole = \u0027authenticated user\u0027 ORDER BY uid DESC LIMIT\u003Cbr \/\u003E\n50 in \/includes\/database.mysql.inc on line 56\u003Cbr \/\u003E\nThe error repeats itself in other new group listings.\u003Cbr \/\u003E\nI am testing a 24 hour old cvs version, ran the latest\u003Cbr \/\u003E\nupdate script.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1021200288",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/91",
+                    "id": 91,
+                    "resource": "user"
+                }
+            ],
+            "nid": "173",
+            "vid": "2898339",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "user admin sql error",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/173",
+            "edit_url": "https:\/\/www.drupal.org\/node\/173\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021200288",
+            "changed": "1022698912",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/91",
+                "id": "91",
+                "resource": "user",
+                "name": "raido@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287442",
+                    "id": 287442,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287443",
+                    "id": 287443,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698912"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003E\u0027view new comments\u0027 shows all comments as posted by anonymous (chicken), both on drop.org and on drupal.org\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1021327876",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/39",
+                    "id": 39,
+                    "resource": "user"
+                }
+            ],
+            "nid": "179",
+            "vid": "2898345",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "anonymous comments in tracker",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/179",
+            "edit_url": "https:\/\/www.drupal.org\/node\/179\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1021327876",
+            "changed": "1022698929",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/39",
+                "id": "39",
+                "resource": "user",
+                "name": "polaar@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287450",
+                    "id": 287450,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287451",
+                    "id": 287451,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698929"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EI get such a link for \u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1022015885",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/227",
+                    "id": 227,
+                    "resource": "user"
+                }
+            ],
+            "nid": "192",
+            "vid": "2898369",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "referer.module: links",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/192",
+            "edit_url": "https:\/\/www.drupal.org\/node\/192\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1022015885",
+            "changed": "1022698945",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/227",
+                "id": "227",
+                "resource": "user",
+                "name": "killes@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287473",
+                    "id": 287473,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287474",
+                    "id": 287474,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "2",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698945"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EIt does not work. I do not get any emails.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1022004339",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/227",
+                    "id": 227,
+                    "resource": "user"
+                }
+            ],
+            "nid": "191",
+            "vid": "2898365",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Admin approved registration",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/191",
+            "edit_url": "https:\/\/www.drupal.org\/node\/191\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1022004339",
+            "changed": "1022698957",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/227",
+                "id": "227",
+                "resource": "user",
+                "name": "killes@www.drop.org"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287470",
+                    "id": 287470,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287471",
+                    "id": 287471,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287472",
+                    "id": 287472,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022698957"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EThe new user modules allow very limited contorl over accounts. Users get themselves into a lot of troubles at times so it would be nice to:\u003Cbr \/\u003E\n  * change their email.\u003Cbr \/\u003E\n  * change\/mail them new password.\u003Cbr \/\u003E\n  * edit any information really.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "User interface",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                "id": "23",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1016662048",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                }
+            ],
+            "nid": "113",
+            "vid": "2898149",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Editing user accounts",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/113",
+            "edit_url": "https:\/\/www.drupal.org\/node\/113\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1016662048",
+            "changed": "1022739876",
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287266",
+                    "id": 287266,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287267",
+                    "id": 287267,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287268",
+                    "id": 287268,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1022739876"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EShouldn\u0027t going to index.php?or=xxx show all content for the term rather than only promoted content?\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "7",
+            "field_issue_priority": "200",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1022346994",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/23",
+                    "id": 23,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                    "id": 19,
+                    "resource": "user"
+                }
+            ],
+            "nid": "197",
+            "vid": "2898381",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Taxonomy\u0027s \u0022or=xxx\u0022 feature",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/197",
+            "edit_url": "https:\/\/www.drupal.org\/node\/197\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1022346994",
+            "changed": "1023519721",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/19",
+                "id": "19",
+                "resource": "user",
+                "name": "barryorourke"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287482",
+                    "id": 287482,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287483",
+                    "id": 287483,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287484",
+                    "id": 287484,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287485",
+                    "id": 287485,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287486",
+                    "id": 287486,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "5",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "3",
+            "has_new_content": null,
+            "last_comment_timestamp": "1023519721"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EI can\u0027t add new developers to the project module through the admin interface.  Maybe there is an implicit\/undefined limit on the maximum number of developers?  Also, adding multiple developers at once seems to cause weird things to happen such as other developers being deleted.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "6",
+            "field_issue_priority": "400",
+            "field_issue_category": "1",
+            "field_issue_component": "Code",
+            "field_issue_assigned": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/2",
+                "id": "2",
+                "resource": "user"
+            },
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": "x.y.z",
+            "field_issue_last_status_change": "1023131362",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                    "id": 1,
+                    "resource": "user"
+                }
+            ],
+            "nid": "210",
+            "vid": "2898415",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Can\u0027t add developers to a project.",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/210",
+            "edit_url": "https:\/\/www.drupal.org\/node\/210\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1023131362",
+            "changed": "1023535658",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/1",
+                "id": "1",
+                "resource": "user",
+                "name": "dries"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287511",
+                    "id": 287511,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "1",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "1",
+            "has_new_content": null,
+            "last_comment_timestamp": "1023535658"
+        },
+        {
+            "body": {
+                "value": "\u003Cp\u003EIf someone wants to search a drupal site, they shouldn\u0027t need to click the word search, download a page with the search box, type their word, and click submit again.  It should be possible from every page within drupal.  \u003C\/p\u003E\n\u003Cp\u003EI propose changing the search link that appears in the site nav to a search text field with a \u003Cu\u003Ego\u003C\/u\u003E link next to it.\u003C\/p\u003E\n\u003Cp\u003EThis seems to be the common approach to search interfaces on the net.\u003C\/p\u003E",
+                "summary": "",
+                "format": "1"
+            },
+            "taxonomy_vocabulary_9": [],
+            "field_issue_status": "6",
+            "field_issue_priority": "200",
+            "field_issue_category": "3",
+            "field_issue_component": "User interface",
+            "field_project": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/node\/3060",
+                "id": "3060",
+                "resource": "node"
+            },
+            "field_issue_files": [],
+            "field_issue_related": [],
+            "field_issue_version": null,
+            "field_issue_last_status_change": "1023643014",
+            "field_issue_parent_link": [],
+            "field_issue_related_links": [],
+            "flag_project_issue_follow_user": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/8",
+                    "id": 8,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/277",
+                    "id": 277,
+                    "resource": "user"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/user\/325",
+                    "id": 325,
+                    "resource": "user"
+                }
+            ],
+            "nid": "225",
+            "vid": "2898469",
+            "is_new": false,
+            "type": "project_issue",
+            "title": "Change the search link in the site nav to a search text field",
+            "language": "und",
+            "url": "https:\/\/www.drupal.org\/project\/drupal\/issues\/225",
+            "edit_url": "https:\/\/www.drupal.org\/node\/225\/edit",
+            "status": "1",
+            "promote": "0",
+            "sticky": "0",
+            "created": "1023643014",
+            "changed": "1023668646",
+            "author": {
+                "uri": "https:\/\/www.drupal.org\/api-d7\/user\/325",
+                "id": "325",
+                "resource": "user",
+                "name": "joe lombardo"
+            },
+            "comment": "2",
+            "comments": [
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287546",
+                    "id": 287546,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287547",
+                    "id": 287547,
+                    "resource": "comment"
+                },
+                {
+                    "uri": "https:\/\/www.drupal.org\/api-d7\/comment\/287548",
+                    "id": 287548,
+                    "resource": "comment"
+                }
+            ],
+            "comment_count": "3",
+            "comment_count_new": false,
+            "feeds_item_guid": null,
+            "feeds_item_url": null,
+            "feed_nid": null,
+            "flag_flag_tracker_follow_user": [],
+            "flag_tracker_follower_count": "3",
+            "has_new_content": null,
+            "last_comment_timestamp": "1023668646"
+        }
+    ]
+}

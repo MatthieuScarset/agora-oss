@@ -9,7 +9,7 @@ Purpose: central rules and governance for repo agents.
 - Data access: agents must declare read/write paths;
   default: read `data/normalized/`, write `data/marts/`.
 - Safety: redact PII (emails), obey privacy rules, do not exfiltrate secrets.
-- Failure: write error artifacts to `data/marts/_errors/` and
+- Failure: write error artifacts to `logs/` and
   notify maintainers.
 - Testing: each agent should reference BDD scenarios under `tests/bdd/`.
 - Owner: specify maintainer contact in agent folder.

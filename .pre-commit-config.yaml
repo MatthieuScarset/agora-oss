@@ -61,13 +61,15 @@ repos:
       - id: hadolint
 
   # Python
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.12
+  - repo: local
     hooks:
-      - id: ruff
-        args: ['--fix']
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.20.2
-    hooks:
-      - id: mypy
-        additional_dependencies: []
+      - id: ruff-local
+        name: ruff (local)
+        entry: bash -lc "uv run ruff check --fix . || ruff check --fix ."
+        language: system
+        types: [python]
+      - id: ty-local
+        name: ty (type checker)
+        entry: bash -lc "uv run ty check || ty check"
+        language: system
+        types: [python]

@@ -1,7 +1,7 @@
 # Mission
 
 Build an agnostic, agent-enabled platform that turns FLOSS community data into
-clear insights, useful datamarts, and actionable recommendations.
+clear insights, useful data products, and actionable recommendations.
 
 ## Problem to solve
 
@@ -21,7 +21,7 @@ The mission is successful when Agora can:
 
 - ingest data from multiple FLOSS sources through a common pipeline
 - normalize raw records into stable Agora models
-- build datamarts that support dashboard views and semantic search
+- build data products that support dashboard views and semantic search
 - surface insights that are understandable and actionable for users
 - remain extensible for new providers, entities, and agent workflows
 

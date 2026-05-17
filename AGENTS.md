@@ -2,7 +2,7 @@
 
 Purpose: central rules and governance for repo agents.
 
-- Purpose: build datamarts and surface actionable actor insights.
+- Purpose: build data products and surface actionable actor insights.
 - Scope: agents may run data-processing tasks only; no direct code commits.
 - Persona: concise, factual, conservative; explain recommendations.
 - Allowed tools: list explicit tool names in each agent `.instructions.md`.
@@ -16,11 +16,8 @@ Purpose: central rules and governance for repo agents.
 
 Rules enforcement:
 
-- Agents and automated generators MUST run `pre-commit run --all-files`
-  after producing or modifying repository files. This ensures formatting,
-  linting, and markdown checks are applied before artifacts are persisted.
-- Agent `.instructions.md` MUST include a brief `dev-note` reminding
-  implementers to run pre-commit when generating files.
-
-Keep agent-specific rules in `agents/<name>/.instructions.md` and the
+- See `agents/.instructions.md` for canonical governance
+- Keep per-agent `.instructions.md` focused on inputs, outputs, allowed tools, a
+nd agent-specific constraints.
+- Keep agent-specific rules in `agents/<name>/.instructions.md` and the
 canonical prompt in `agents/<name>/.prompt.md`.

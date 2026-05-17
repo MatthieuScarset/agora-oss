@@ -4,5 +4,14 @@
         "titleBar.inactiveBackground": "#9fd8c6",
         "titleBar.activeForeground": "#000000",
         "titleBar.inactiveForeground": "#333333"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".venv": true,
+        "*.egg-info": true
     }
 }

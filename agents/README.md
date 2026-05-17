@@ -11,5 +11,6 @@ Conventions:
 Agents are executed by workers (see `workers/agents/`) and must declare
 data access paths.
 
-Important: generated outputs must be formatted and linted. Agents must
-run `pre-commit run --all-files` before saving generated files to the repo.
+Important: generated outputs must be formatted and linted. See
+`agents/.instructions.md` for the canonical agent governance, including
+the `pre-commit` requirement.

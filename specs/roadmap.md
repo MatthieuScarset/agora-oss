@@ -14,7 +14,8 @@ Key items:
 
 - fetch raw issues from Drupal.org
 - normalize into Agora models
-- build agent-assisted datamarts
+- normalize into Agora models
+- build agent-assisted data products
 - expose semantic-searchable insights on a dashboard
 
 ### Phase 0 — Deliverables
@@ -22,7 +23,7 @@ Key items:
 - Drupal.org issue harvester (single project or small set)
 - Raw-to-Agora transform: `Issue`, `Actor`
 - Local lakehouse for raw + normalized data (parquet)
-- Agentic datamart generation
+- Agentic data product generation
 - Dashboard + semantic search
 - BDD-style Markdown validation specs
 
@@ -37,7 +38,7 @@ Extend provider support and prove reuse of the canonical model.
 - Add WordPress and Symfony providers
 - Provider abstraction and ingestion interfaces
 - Shared normalization pipeline across sources
-- Datamart generation for multiple providers
+- Data product generation for multiple providers
 - Basic CI for ingestion flows
 
 ## Phase 2 - Scalable orchestration

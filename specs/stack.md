@@ -47,8 +47,3 @@
 
 - ruff
 - pre-commit
-
-## Dev note
-
-- After any generated changes, run `pre-commit run --all-files` to apply
- formatting and lint fixes (ruff, markdownlint, etc.).
